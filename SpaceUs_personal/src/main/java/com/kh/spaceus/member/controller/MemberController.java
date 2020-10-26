@@ -545,12 +545,7 @@ public class MemberController {
 		String encryptPassword = bcryptPasswordEncoder.encode(rawPassword);
 		member.setPassword(encryptPassword);
 
-//		log.debug("rawPassword@controller = {}", rawPassword);
-//		log.debug("encryptPassword@controller = {}", encryptPassword);
-
 		int result = memberService.insertMember(member);
-
-//		log.debug("result@controller =", result);
 
 		String msg = (result > 0) ? "회원가입 성공!" : "회원가입 실패!";
 		redirectAttr.addFlashAttribute("msg", msg);

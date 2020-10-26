@@ -178,24 +178,6 @@ input[type=file], .address-input {margin-bottom:20px; margin-top:10px;}
 										<th id=23>23:00 - 24:00</th>	                                
                                 	</tr>
                                 </table>
-                                <!-- <hr>
-                                <h6>익일</h6>
-                                <hr>
-                                <table class="table table-bordered" style="cursor: pointer;" id="availableTime2">
-                                	<tr>
-										<th id=24 style="width:16.6%;">00:00 - 01:00</th>	                                
-										<th id=25 style="width:16.6%;">01:00 - 02:00</th>	                                
-										<th id=26 style="width:16.6%;">02:00 - 03:00</th>	                                
-										<th id=27 style="width:16.6%;">03:00 - 04:00</th>	                                
-										<th id=28 style="width:16.6%;">04:00 - 05:00</th>	                                
-										<th id=29 style="width:16.6%;">05:00 - 06:00</th>	                                
-                                	</tr>
-                                	<tr>
-										<th id=30>06:00 - 07:00</th>	                                
-										<th id=31>07:00 - 08:00</th>	                                
-										<th id=32>08:00 - 09:00</th>
-									</tr>
-                                </table> -->
                                 <input type="hidden" name="day" value="" />
                                
                             </div>
