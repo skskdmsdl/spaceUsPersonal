@@ -190,10 +190,11 @@ input[type=file], .address-input {margin-bottom:20px; margin-top:10px;}
 	                                    <input id="tagName" type="text" placeholder="태그를 입력해주세요">
 	                                </div>
 	                                <div>
-			                            <button id="addTags" type="button" class="btn btn-primary ml-4 pr-4 pl-4 p-10">추가 ⅴ</button>
+			                            <button id="addTags" type="button" class="btn btn-primary ml-4 pr-4 pl-4 p-10">추가 ⅴ</button> 
 		                            </div>
+		                            <div id="refreshBtn" style="cursor:pointer; display:none;"><i class="fa fa-refresh ml-4 mt-4"></i>초기화</div>
 	                            </div>
-		                        <span id="tags" class="btn p-0" style="cursor: pointer;"></span>
+		                        <span class="btn p-0 tags" style="cursor: pointer;"></span>
                             </div>
                             <div class="pf-feature-price">
                                 <h4>가격 (시간당)<span class="text-danger">*</span></h4>
@@ -519,6 +520,7 @@ $("#availableTime th").on("click", function(){
 
 <!-- 태그 script -->
 <script>
+
 //태그 추가 클릭이벤트
 $("#addTags").on('click', function(){
 	if($("#tagName").val()==""){swal("내용을 입력해주세요");};
@@ -536,8 +538,9 @@ $("#addTags").on('click', function(){
 		,
 		dataType : "json",
 		success : function(data){
-			$("#tags").append("<input type='checkbox' name='tag' style='display:none' value="+$('#tagName').val() +" checked/><span class='label label-success m-2 p-2'>#"+$('#tagName').val() +" X</span>"); 
-			/* $("#tags").append("<span class='label label-success m-2 p-2 small'>#"+$('#tagName').val() +" X</span>");  */
+			//태그 추가시 초기화 버튼 보이기
+			$("#refreshBtn").show();
+			$(".tags").append("<input type='checkbox' name='tag' style='display:none' value="+$('#tagName').val() +" checked/><span class='label label-success m-2 p-2'>#"+$('#tagName').val() +"</span>"); 
 	    	$("#tagName").val("");	
 		},
 		error : function(xhr, status, err){
@@ -547,10 +550,10 @@ $("#addTags").on('click', function(){
     }
 });
 //태그 삭제 클릭이벤트	
-$("#tags").on("click", function(){	
-	$("#tags *").remove();	
-	$("#tag").val("");	
-	$("#tagName").val("");	
+$("#refreshBtn").on("click", function(){	
+	//추가된 태그 없을시 초기화 버튼 숨기기
+	$("#refreshBtn").css("display", "none");
+	$(".tags *").remove();	
 });	
 
 </script>

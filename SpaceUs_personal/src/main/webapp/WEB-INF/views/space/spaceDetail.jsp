@@ -349,8 +349,6 @@ function naverShare() {
 											<p>${space.memberEmail }</p>
 										</div>
 									</div>
-									
-										
 								</div>
 							</div>
 						</div>
