@@ -520,7 +520,6 @@ $("#availableTime th").on("click", function(){
 
 <!-- 태그 script -->
 <script>
-
 //태그 추가 클릭이벤트
 $("#addTags").on('click', function(){
 	if($("#tagName").val()==""){swal("내용을 입력해주세요");};
@@ -555,9 +554,7 @@ $("#refreshBtn").on("click", function(){
 	$("#refreshBtn").css("display", "none");
 	$(".tags *").remove();	
 });	
-
 </script>
-
 <!-- 사업자등록 script -->
 <script>
 //사업자 등록정보 조회(중복조회)
