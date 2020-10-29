@@ -292,7 +292,6 @@ input[type=file], .address-input {margin-bottom:20px; margin-top:10px;}
                      </div>
              </section>
     <!-- 구인구직 리스트 끝-->
-     <!-- || (list.email eq loginMember || loginMember eq recruit.email) -->
 <!-- 컨텐츠 끝 -->
 <script>
 $("#modifyBtn").on('click', function(){

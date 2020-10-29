@@ -489,7 +489,7 @@ $("#sub").on("click", function(){
 	document.insertReservation.submit();
 });
 
-function iamport(){
+/* function iamport(){
 	var pay = $("[name='selectPay']:checked").val();
 	
 	if("카드결제" == pay){
@@ -566,7 +566,7 @@ function iamport(){
 
 	}
 
-}
+} */
 
 </script>
 <script>$(function () { memberId();});</script>
