@@ -105,12 +105,10 @@ public class MemberController {
 		if(result>0) {
 			
 			msg = "성공적으로 회원정보를 삭제했습니다.";
-			
 			SecurityContextHolder.clearContext();
 		}
 		else 
 			msg = "회원정보 삭제를 실패했습니다.";
-			
 		
 		model.addAttribute("msg", msg);
 		return "redirect:/";
@@ -247,7 +245,6 @@ public class MemberController {
 	public String reviewList (Model model, Principal principal) {
 		Member member = memberService.selectOneMember(principal.getName());
 		//예약테이블 조회 -> 해당 아이디의 모든 예약번호 조회 + 공간정보 가져오기
-		/*List<Reservation> revList = reservationService.selectListReservation(principal.getName());*/
 		List<Space> spaceList = spaceService.selectReviewList(principal.getName());
 		
 		for(Space s : spaceList) {
@@ -309,7 +306,6 @@ public class MemberController {
 
 		return mav;
 	}
-	
 	
 
 //	**이쪽은 지우지 말기!!// 로그인 폼
@@ -550,7 +546,6 @@ public class MemberController {
 		String msg = (result > 0) ? "회원가입 성공!" : "회원가입 실패!";
 		redirectAttr.addFlashAttribute("msg", msg);
 
-//		return "member/memberLoginForm";
 		return "redirect:/member/memberLoginForm.do";
 	}
 	
@@ -631,7 +626,6 @@ public class MemberController {
 	public String updateReview(Review review,
 								@RequestParam("spaceNo") String spaceNo,
 								@RequestParam("revNo") String revNo,
-			/* @RequestParam(value="upFile",required=false) MultipartFile[] upFiles, */
 								HttpServletRequest request,
 								RedirectAttributes redirectAttr) {
 		
@@ -639,7 +633,6 @@ public class MemberController {
 		review.setSpaceNo(spaceNo);
 		review.setRevNo(revNo);
 		
-		/* review.setReviewAtt(attachList); */
 		log.debug("reveiw = {}", review);
 		
 		//2. 게시글, 첨부파일정보를 DB에 저장
@@ -693,12 +686,11 @@ public class MemberController {
 		return map;
 	}
 	
-	
 	//비밀번호 변경
 	@GetMapping("/updatePwd.do")
 	@ResponseBody
 	public ModelAndView updatePwd(ModelAndView mav,
-										 Principal principal, Member member) {
+								  Principal principal, Member member) {
 		
 		String encryptPassword = bcryptPasswordEncoder.encode(member.getPassword());
 		member.setPassword(encryptPassword);

@@ -59,7 +59,6 @@ public class RecruitController {
 		List<Recruit> list = recruitService.selectRecruitList(limit, offset);
 		log.debug("list = {}", list);
 		
-		
 		//전체컨텐츠수 구하기
 		int totalContents = recruitService.selectRecruitTotalContents(); 
 		String url = request.getRequestURI() + "?";

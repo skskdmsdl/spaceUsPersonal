@@ -23,7 +23,6 @@ public class AboutUsController {
 		return "aboutus/contact";
 	}
 	
-	
 	//FAQ
 	@RequestMapping("/faqs.do")
 	public String faqList() {
