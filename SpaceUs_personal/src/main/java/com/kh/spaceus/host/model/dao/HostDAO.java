@@ -20,4 +20,6 @@ public interface HostDAO {
 	List<String> selectReservationSpaceNo();
 
 	int insertSettlement(String spaceNo);
+
+	int insertMonthlySettlement();
 }

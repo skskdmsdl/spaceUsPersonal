@@ -40,6 +40,11 @@ public class HostServiceImpl implements HostService {
 		return hostDAO.insertSettlement(spaceNo);
 	}
 
+	@Override
+	public int insertMonthlySettlement() {
+		return hostDAO.insertMonthlySettlement();
+	}
+
 	
 
 

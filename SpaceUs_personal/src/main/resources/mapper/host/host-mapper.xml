@@ -113,5 +113,23 @@
 		)
   </insert>
   
+  <insert id="insertMonthlySettlement">
+	insert all
+	    into monthly_sale
+	    values(
+	        'MONTH'||seq_daily_sale_no.nextval,
+	        space_no,
+	        settlement_month,
+	        monthly_total_hour,
+	        monthly_revenue
+	    )        
+	    select 
+	    	max(space_no) space_no, sum(daily_revenue) as monthly_total_hour, sum(daily_total_hour) as monthly_revenue, to_char(sysdate, 'yy/mm') as settlement_month
+	    from 
+	    	daily_sale
+	    where 
+	    	space_no=#{spaceNo} and to_char(settlement_date, 'yy/mm') = to_char(sysdate, 'yy/mm')
+  </insert>
+  
 
 </mapper>

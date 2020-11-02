@@ -52,6 +52,10 @@ public class Scheduler {
 		
 		System.out.println("출석데이터 삭제"); 
 		int result3 = memberService.deleteAttendance();
+		
+		System.out.println("월별 정산내역 db 저장"); 
+		int result4 = hostService.insertMonthlySettlement(); 
+		
 	}
 
 	@Scheduled(cron ="0 0 0 * * *") 
@@ -77,5 +81,6 @@ public class Scheduler {
 		System.out.println("공간 사용완료 업데이트 "); 
 		int result5 = reservationService.updateComple();
 	} 
+	
 }
 
