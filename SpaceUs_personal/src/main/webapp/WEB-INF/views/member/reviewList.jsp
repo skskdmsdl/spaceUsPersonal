@@ -103,7 +103,6 @@
 			                         	</div>
 			                         </c:if> 
 
-<%--                                         <div class="col-md-9 m-b-30">${ fn:substring(list.content,0,30) }</div> --%>
                                         <div class="col-md-9">
                                          <c:if test="${ list.reviewNo == null }">
                                             	<a class="btn m-r-5 btn-rounded btn-outline-success reviewBtn" style="position: absolute;right: -140px;bottom: 1px;">리뷰등록</a> 
@@ -152,8 +151,6 @@
 					                           		<input type="submit" class="btn submit" style="margin-bottom: 70px;height: 80px; border: 1px solid #ddd;width: 70px;" value="등록">
 					                           </div>
 												</form>
-												<!-- <div class="m-1" style="position: absolute;right: 60px;">+ 사진</div> -->
-					                         	
 					                           
 												
 											<!-- 리뷰수정 -->	

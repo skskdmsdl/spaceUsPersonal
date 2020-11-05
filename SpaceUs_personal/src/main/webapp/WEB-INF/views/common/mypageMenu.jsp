@@ -6,10 +6,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%-- 한글 인코딩 처리 --%>
 <fmt:requestEncoding value="utf-8" />
-
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-
-<%-- <jsp:include page="/WEB-INF/views/common/myPageHeader.jsp" /> --%>
  
 <script>
 (function(t,a,l,k,j,s){
@@ -17,7 +14,6 @@ s=a.createElement('script');s.async=1;s.src="https://cdn.talkjs.com/talk.js";a.h
 ;k=t.Promise;t.Talk={v:3,ready:{then:function(f){if(k)return new k(function(r,e){l.push([f,r,e])});l
 .push([f])},catch:function(){return k&&new k()},c:l}};})(window,document,[]);
 </script>
-
 
 <input type="hidden" id="nick" value="${member.nickName}" />
 <input type="hidden" id="mail" value="${member.memberEmail}" />

@@ -39,7 +39,6 @@ public class CommentController {
 		}catch(Exception e) {
 			log.error("댓글 등록 오류",e);
 		}
-		
 	}
 	
 	@PostMapping("/updateComment.do")

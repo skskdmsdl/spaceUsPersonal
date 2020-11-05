@@ -629,7 +629,6 @@ public class MemberController {
 								HttpServletRequest request,
 								RedirectAttributes redirectAttr) {
 		
-		
 		review.setSpaceNo(spaceNo);
 		review.setRevNo(revNo);
 		
