@@ -168,7 +168,7 @@ $(function(){
 			  <div class="align-self-center navbar-nav ml-3" style="cursor: pointer !important;">
 	        		<div  data-toggle="modal" data-target="#exampleModal">
 			        	<div class="memberId" style="display: inline-block;">반갑습니다. &nbsp;</div>
-	        			<%-- <sec:authentication property="principal.nickName"/>  --%>
+	        			<sec:authentication property="principal.nickName"/> 님! 
 	        		</div>
 	          </div>  	 
 		  	</ul>
@@ -184,7 +184,7 @@ $(function(){
 	        	  <div class="align-self-center navbar-nav ml-3" style="cursor: pointer !important;">
 	        		<div  data-toggle="modal" data-target="#exampleModal">
 		        		<div class="memberId" style="display: inline-block;">반갑습니다. &nbsp;</div>
-	        			 <%-- <sec:authentication property="principal.nickName"/> --%> 
+	        			 <sec:authentication property="principal.nickName"/> 님!
 	        		</div>
 	        	  </div>
 	          </ul>
@@ -208,7 +208,7 @@ $(function(){
 	        	<div data-toggle="modal" class="row" data-target="#exampleModal">
 		        	<img class="ml-3" src="https://resource.miricanvas.com/image/common/profile_argo.svg" style="background: #22B47B; border-right: 0; border-radius: 90%; width: 40px;  height: 40px;">
 	        		<div  class="memberId mt-2 ml-2"></div>
-	        		<%--  <sec:authentication property="principal.nickName"/>  --%>
+	        		<sec:authentication property="principal.nickName"/> 님!
 	        	</div>
 	        </h5>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -252,7 +252,7 @@ $(function(){
 	</sec:authorize>
 <script>
  
-function memberId(){ 
+/* function memberId(){ 
 	$.ajax({
 		type:"GET",
 		url:"${pageContext.request.contextPath}/member/header.do",
@@ -264,7 +264,7 @@ function memberId(){
 			console.log("ajax 요청 실패");
 			}
 		});
-};
+}; */
 function enrollSpace(){
    	swal("로그인 후 이용할 수 있습니다.")
    	.then((value) => {
