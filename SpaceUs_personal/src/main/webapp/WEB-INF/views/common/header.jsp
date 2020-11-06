@@ -258,11 +258,8 @@ function memberId(){
 		url:"${pageContext.request.contextPath}/member/header.do",
 		dataType:"json",
 		success:function(data){
-			//console.log("ajax 요청 성공!");
-			//console.log("dsfdsafadsfasfasdfasdfasdfasdfasf"+ data.nickName);
 			$(".memberId").append(data.nickName+"님");
 			
-			 
 		},error:function(){
 			console.log("ajax 요청 실패");
 			}
