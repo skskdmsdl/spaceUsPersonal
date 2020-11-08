@@ -514,5 +514,4 @@ $(".replyCon").keyup(function(){
 	}
 });
 </script>
-<script>$(function () { memberId();});</script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

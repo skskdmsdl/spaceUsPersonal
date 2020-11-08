@@ -157,5 +157,4 @@ input[type="text"] {
 	    }});    
 
 </script>
-<script>$(function () { memberId();});</script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/> 
