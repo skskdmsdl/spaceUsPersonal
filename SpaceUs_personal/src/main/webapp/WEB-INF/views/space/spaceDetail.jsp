@@ -1043,7 +1043,6 @@ var geocoder = new kakao.maps.services.Geocoder();
     	        }]
     	    });
 </script>
-<script>$(function () { memberId();});</script>
 <script>
 /* 추천공간 이미지 슬라이드 */
 /* $(".owl-carousel ref").owlCarousel({ 
@@ -1267,6 +1266,5 @@ $("#likeLogin").click(function(){
 });
 
 </script>
-
 <!-- 컨텐츠 끝 -->
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />

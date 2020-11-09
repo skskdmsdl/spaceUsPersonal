@@ -419,7 +419,4 @@ function sortChange(obj){
 </div>
 <!-- 공간 리스트 끝-->
 </section>	
-
-<script>$(function () { memberId();});</script>
-	
 <jsp:include page="/WEB-INF/views/common/footer1.jsp" />

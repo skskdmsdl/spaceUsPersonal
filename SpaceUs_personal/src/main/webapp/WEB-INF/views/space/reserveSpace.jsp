@@ -569,7 +569,5 @@ $("#sub").on("click", function(){
 } */
 
 </script>
-<script>$(function () { memberId();});</script>
-
 <!-- 컨텐츠 끝 -->
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
