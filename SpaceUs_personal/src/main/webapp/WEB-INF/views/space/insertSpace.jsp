@@ -48,8 +48,6 @@ input[type=file], .address-input {margin-bottom:20px; margin-top:10px;}
 							  action="${pageContext.request.contextPath}/space/insertSpace.do" 
 							  method="post"
 							  enctype="multipart/form-data">
-							  <!-- enctype="multipart/form-data"> -->
-<!-- 							  onsubmit="return spaceValidate();" -->
                             <div class="pf-title">
                                 <h4>공간이름<span class="text-danger">*</span></h4>
                                 <!-- <h6>(공간이름은 수정이 불가능합니다 정확히 입력해주세요)</h6> -->
