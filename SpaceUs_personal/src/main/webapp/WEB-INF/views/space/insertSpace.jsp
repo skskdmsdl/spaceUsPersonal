@@ -58,7 +58,6 @@ input[type=file], .address-input {margin-bottom:20px; margin-top:10px;}
                            
                             <div class="pf-location">
                                 <h4>공간주소<span class="text-danger">*</span></h4>
-                                <!-- <h6>(공간주소는 수정이 불가능합니다 정확히 입력해주세요)</h6> -->
                                 <div style="display:inline-block; width:40%">
 	                                <input class="zipCode-input" id="sample6_postcode" type="text" placeholder="우편번호"/>
 	                            </div>
