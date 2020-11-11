@@ -37,7 +37,6 @@ input[type=file], .address-input {margin-bottom:20px; margin-top:10px;}
       </div>
     </div>
     <!-- Breadcrumb Section End -->
-
     <!-- 공간 등록 폼 -->
     <section class="property-submit-section spad m-5">
         <div class="container ">
@@ -50,7 +49,6 @@ input[type=file], .address-input {margin-bottom:20px; margin-top:10px;}
 							  enctype="multipart/form-data">
                             <div class="pf-title">
                                 <h4>공간이름<span class="text-danger">*</span></h4>
-                                <!-- <h6>(공간이름은 수정이 불가능합니다 정확히 입력해주세요)</h6> -->
                                 <input type="text" name="spaceName" id="spaceName">
                             </div>
                             <div class="pf-summernote">
