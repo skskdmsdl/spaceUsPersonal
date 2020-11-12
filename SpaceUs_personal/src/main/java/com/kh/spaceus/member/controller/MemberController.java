@@ -679,6 +679,8 @@ public class MemberController {
 		authentication.getName();
 		authentication.getPrincipal();
 		
+		((Member) authentication.getPrincipal()).setNickName(member.getNickName());
+		
 		Map<String, Object> map = new HashMap<>();
 		map.put("nick", member.getNickName());
 
