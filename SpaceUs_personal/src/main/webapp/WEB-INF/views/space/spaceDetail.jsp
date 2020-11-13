@@ -1024,8 +1024,8 @@ var geocoder = new kakao.maps.services.Geocoder();
     	        description: $('#spaceCon').val(),
     	        imageUrl: 'https://post-phinf.pstatic.net/MjAxOTA4MzBfMTQ0/MDAxNTY3MTQ5Njk5ODg1.sDdYLvHVexwz3_Y9g3gNw4abEH1H07TNO5xUJQTLfbYg.dfsCNys7wtBo0IMpY0soq9dASloUMMeiZ9Ozeb20plkg.PNG/%EA%B0%95%EC%9B%90%ED%98%B8_%ED%98%B8%ED%85%94%EB%A6%AC%EC%A1%B0%ED%8A%B8.PNG?type=w1200',
     	        link: {
-    	          mobileWebUrl: 'https://www.spacecloud.kr/',
-    	          webUrl: 'https://www.spacecloud.kr/'
+    	          mobileWebUrl: 'http://localhost:9090/spaceus/space/spaceDetail.do?spaceNo='+'${space.spaceNo}',
+    	          webUrl: 'http://localhost:9090/spaceus/space/spaceDetail.do?spaceNo='+'${space.spaceNo}',
     	        }
     	      },
     	      social: {
@@ -1037,8 +1037,8 @@ var geocoder = new kakao.maps.services.Geocoder();
     	        {
     	          title: '웹으로 보기',
     	          link: {
-    	            mobileWebUrl: 'https://www.spacecloud.kr/',
-    	            webUrl: 'https://www.spacecloud.kr/'
+    	            mobileWebUrl: 'http://localhost:9090/spaceus/space/spaceDetail.do?spaceNo='+'${space.spaceNo}',
+    	            webUrl: 'http://localhost:9090/spaceus/space/spaceDetail.do?spaceNo='+'${space.spaceNo}',
     	          	}
     	        }]
     	    });
