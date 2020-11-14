@@ -44,6 +44,12 @@ public class Scheduler {
 	/** 
 	 * cron표현식 초 분 시 일 월 요일 년(생략가능)
 	 */
+	@Scheduled(cron = "0 0 0 1 1 *")
+	public void yearlyScheduler(){ 
+		System.out.println("년별 정산내역 db 저장"); 
+		int result = hostService.insertYearlySettlement(); 
+	}
+	
 	@Scheduled(cron = "0 0 0 1 * *")
 	public void monthlyScheduler(){ 
 		System.out.println("출석 쿠폰 발급"); 
@@ -55,7 +61,6 @@ public class Scheduler {
 		
 		System.out.println("월별 정산내역 db 저장"); 
 		int result4 = hostService.insertMonthlySettlement(); 
-		
 	}
 
 	@Scheduled(cron ="0 0 0 * * *") 

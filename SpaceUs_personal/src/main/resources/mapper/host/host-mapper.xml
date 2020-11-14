@@ -124,11 +124,29 @@
 	        monthly_revenue
 	    )        
 	    select 
-	    	max(space_no) space_no, sum(daily_revenue) as monthly_total_hour, sum(daily_total_hour) as monthly_revenue, to_char(sysdate, 'yy/mm') as settlement_month
+	    	max(space_no) space_no, sum(daily_total_hour) as monthly_total_hour, sum(daily_revenue) as monthly_revenue, to_char(sysdate, 'yy/mm') as settlement_month
 	    from 
 	    	daily_sale
 	    where 
 	    	space_no=#{spaceNo} and to_char(settlement_date, 'yy/mm') = to_char(sysdate, 'yy/mm')
+  </insert>
+
+  <insert id="insertYearlySettlement">
+	insert all
+       into yearly_sale
+       values(
+           'YEAR'||seq_yearly_sale_no.nextval,
+           space_no,
+           year,
+           year_total_hour,
+           year_total_sale
+       )        
+       select 
+          max(space_no) space_no, sum(monthly_revenue) as year_total_sale, sum(monthly_total_hour) as year_total_hour, to_char(sysdate, 'yyyy') as year
+       from 
+          monthly_sale
+       where 
+          space_no=#{spaceNo} and to_char(settlement_month, 'yy/mm') = to_char(sysdate, 'yy/mm')
   </insert>
   
 

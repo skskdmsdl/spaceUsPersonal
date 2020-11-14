@@ -19,5 +19,6 @@ public interface HostService {
 
 	int insertMonthlySettlement();
 
+	int insertYearlySettlement();
 	
 }

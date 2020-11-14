@@ -22,4 +22,6 @@ public interface HostDAO {
 	int insertSettlement(String spaceNo);
 
 	int insertMonthlySettlement();
+
+	int insertYearlySettlement();
 }

@@ -51,5 +51,10 @@ public class HostDAOImpl implements HostDAO {
 		return session.insert("host.insertMonthlySettlement");
 	}
 
+	@Override
+	public int insertYearlySettlement() {
+		return session.insert("host.insertYearlySettlement");
+	}
+
 	
 }
