@@ -329,9 +329,7 @@ div#search-userName {
 				                   		</td>
 				                   		<td>
 											 <button type="button" name="reportBoardNo" value="${group.reportBoardNo}"
-													class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-											  사유
-											</button> 	
+													class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">사유</button> 	
 				                   		</td>
 				                   		<td>
 				                   			<c:choose>
@@ -347,8 +345,6 @@ div#search-userName {
 		                    	</c:forEach>
 		                    </tbody>
 		                </table>
-		                
-		                
 		            </div>
 		        </div>
 		        <!-- 소모임 테이블 끝 -->
