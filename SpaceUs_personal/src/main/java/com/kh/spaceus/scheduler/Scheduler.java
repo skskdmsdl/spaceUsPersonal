@@ -77,7 +77,6 @@ public class Scheduler {
 		//정산내역 db 저장
 		List<String> list = hostService.selectReservationSpaceNo();
 		for(String str : list) {
-			System.out.println(str);
 			 int result4 = hostService.insertSettlement(str); 
 		}
 		
