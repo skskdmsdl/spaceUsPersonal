@@ -92,7 +92,6 @@ input[type=file], .address-input {margin-bottom:20px; margin-top:10px;}
 			                	<c:if test="${board.boardLevel == 1}">
 									<div class="list-group-item list-group-item-action upper-list" id="upper">
 										${board.boardName}
-									<!-- <span class="badge badge-primary badge-pill">14</span> -->
 									<i class="fas fa-caret-down" style="padding: 0; position: relative; right:0;"></i>
 									</div>
 		                 		</c:if>
@@ -100,7 +99,6 @@ input[type=file], .address-input {margin-bottom:20px; margin-top:10px;}
 		                 			<div class="list-group-item list-group-item-action sub-list">
 			                 			<i class="fas fa-arrow-right"></i>
 											${board.boardName}
-										<!-- <span class="badge badge-primary badge-pill">14</span> -->
 									</div>
 		                 		</c:if>
 		                 		
