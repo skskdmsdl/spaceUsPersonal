@@ -87,13 +87,8 @@
 			<result column="original_filename" property="oname" jdbcType="VARCHAR" javaType="string"/>
 			<result column="renamed_filename" property="rname" jdbcType="VARCHAR" javaType="string"/>
 			<result column="upload_date" property="uploadDate"/>
-<!-- 			<result column="status" property="status" 
-								javaType="_int"
-								jdbcType="BOOLEAN"/> -->
 		</collection>
 	</resultMap>
-	
-	
 	
 	<select resultMap="tagMap" id="selectListSpaceTag">
 		select
