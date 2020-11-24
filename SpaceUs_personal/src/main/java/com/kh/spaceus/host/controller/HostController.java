@@ -73,7 +73,6 @@ public class HostController {
 		ArrayList<String> datelist = new ArrayList<String>();
 		ArrayList<Long> revenuelist = new ArrayList<Long>();
 		
-		
 		for(DailySale ds : list) {
 			datelist.add(ds.getDate());
 			revenuelist.add(ds.getRevenue());
@@ -146,12 +145,6 @@ public class HostController {
 	    //status 수정
 	    int result5 = spaceService.updateStatus(spaceNo, status);
 		
-	    System.out.println("=======================");
-	    System.out.println(result);
-	    System.out.println(result3);
-	    System.out.println(result5);
-	    System.out.println("=======================");
-	    
 		return "redirect:/host/spaceInfo.do";
 	}
 	
@@ -183,7 +176,6 @@ public class HostController {
 		final int limit = 15; 
 		int offset = (cPage - 1) * limit;
 		String memberEmail = principal.getName();
-		System.out.println(order);
 		if(order.equals("all")) {
 			List<Reservation> list = reservationService.selectHostReservationList(memberEmail, limit, offset);
 			int totalContents = reservationService.selectHostRevTotalContents(memberEmail); 
@@ -434,7 +426,6 @@ public class HostController {
 		mav.addObject("spaceNo", spaceNo);
 		mav.addObject("comment", "no");
 		mav.setViewName("host/hostReviewList");
-		System.out.println(review);
 		return mav;
 	}
 	
@@ -449,7 +440,6 @@ public class HostController {
 		review.setContent(content);
 		
 		int result = spaceService.updateReviewComment(review);
-		
 		mav.setViewName("jsonView");
 		
 		return mav;
