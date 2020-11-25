@@ -72,7 +72,6 @@ public class HostController {
 		List<DailySale> list = hostService.selectSettlementList(principal.getName());
 		ArrayList<String> datelist = new ArrayList<String>();
 		ArrayList<Long> revenuelist = new ArrayList<Long>();
-		
 		for(DailySale ds : list) {
 			datelist.add(ds.getDate());
 			revenuelist.add(ds.getRevenue());
