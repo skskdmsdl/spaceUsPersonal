@@ -91,7 +91,6 @@ public class HostController {
 	public ModelAndView ManageSpace(Principal principal, ModelAndView mav, Model model) {
 		Space space = spaceService.selectOneSpaceNo(principal.getName());
 		String cateName = spaceService.selectCateName(space.getSpaceNo());
-		//List<Tag> tag = spaceService.selectListSpaceTag(space.getSpaceNo());
 		List<OptionList> optionList = spaceService.selectOptionList(space.getSpaceNo());
 		List<ReservationAvail> revAvail = reservationService.selectListAvail(space.getSpaceNo());
 		
