@@ -244,7 +244,6 @@ public class HostController {
 
 		List<DailySale> list = hostService.selectSettlementList(principal.getName());
         
-		/* SXSSFWorkbook workbook = hostService.makeSheet(list); */
 		SXSSFWorkbook workbook = excelFileDownloadProcess(list);
         
         model.addAttribute("locale", Locale.KOREA);
