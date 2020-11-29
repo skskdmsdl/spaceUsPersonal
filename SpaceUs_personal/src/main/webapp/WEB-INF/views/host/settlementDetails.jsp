@@ -99,15 +99,6 @@
 				                  </tbody>               		
 			                	</table>
 	           					</div>
-<%-- 	           					<div class="card-body-wrapper">
-	           			 	
-	           					<div class="card-body">
-	           						<div class="card-title">
-	            					<h5 class="mb-1 subject"><i class="fa fa-chart-bar"> 일 매출 추이</i></h5>
-	            					</div>
-						 			<canvas id="achart">차트가 들어갈 자리</canvas>
-		                		</div>
-		                	</div> --%>
 						</div>
 	 				</div>
 	 				</div>
