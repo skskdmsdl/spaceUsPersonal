@@ -1044,13 +1044,6 @@ var geocoder = new kakao.maps.services.Geocoder();
     	    });
 </script>
 <script>
-/* 추천공간 이미지 슬라이드 */
-/* $(".owl-carousel ref").owlCarousel({ 
-		items:1, 
-		loop:false,
-		center:true
-})
- */
 $(".fa-share-square").click(function(){
 	if($("#a1").hasClass('d-none'))
 		$("#a1").removeClass('d-none');
@@ -1065,7 +1058,6 @@ function selectQnaNo(no){
 }
 
 function popModify(no){
-	/* document.getElementById("modify-text").val = "${qna.content}"; */
 	$("#modifyNo").val(no);
 	
 }
