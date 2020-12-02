@@ -79,7 +79,6 @@ var url = $(location).attr('href');
 
 $(function(){
 
-	/* $(".cs-map").removeAttr("style"); */
 	$("#url-input").attr('value', url);
 	
     $("[data-toggle=popover]").popover({
@@ -118,14 +117,12 @@ $(function(){
 			});
     	}
     	else {
-    		//$heart.html("<i class='far fa-heart'></i>");
     		 $.ajax({
 			        type: "POST",
 					url : "${pageContext.request.contextPath}/space/cancelHeart.do",
 					data :  {
 						spaceNo : "${space.spaceNo}",
 						email : "${loginMember.principal.memberEmail}"},
-						//contentType:"application/json;charset=UTF-8"
 					success: function(data){
 						readLikeCnt();
 						$heart.html("<i class='far fa-heart'></i>");
@@ -367,7 +364,6 @@ function naverShare() {
 				
 				<!-- 질문글쓰기 버튼 -->
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#qnaModal" data-whatever="@fat" style="float: right; margin-right: 70px; letter-spacing:1px; font-weight:bold; font-size:1em;">질문글 작성</button>
-								
 				<div class="modal fade" id="qnaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog" role="document">
 				    <div class="modal-content">
@@ -1072,7 +1068,6 @@ function modifyBtn(){
 
 function deleteBtn(no){
 	$("#deleteNo").val(no);
-	/* alert(no); */
 	$('#deleteModal').modal();
 	
 }
