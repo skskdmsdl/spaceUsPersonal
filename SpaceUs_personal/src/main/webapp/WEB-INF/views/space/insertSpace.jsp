@@ -407,13 +407,11 @@ $("#optionTb th").on("click", function(){
     	$(this).addClass("bg-primary");
     	optionArr.push($option);
 	}
-   	//console.log(optionArr);
    	var oStr='';
    	for(var i=0; i<optionArr.length; i++)
    	   	oStr += optionArr[i]+",";
    	   	
    	$("[name=optionNo]").val(oStr);
-   	//console.log($("[name=optionNo]").val());
 });
 </script>
 
