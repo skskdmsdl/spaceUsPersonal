@@ -391,7 +391,6 @@ $("#categoryTb th").on("click", function(){
     	$("#categoryTb th").removeClass("bg-primary");
 
    	$(this).addClass("bg-primary");
-   	//console.log($(this).attr("id"));
    	$("[name=categoryNo]").val($(this).attr("id"));
    	console.log($("[name=categoryNo]").val());
 });
@@ -433,7 +432,6 @@ var flag=0;
 $("#day input").on("click", function(){
 	//배열 인덱스 찾기
 	day = dayTime.findIndex(obj => obj.day == $(this).attr("id"));
-	//console.log(day);
 	//셀 색 지우기
 	for(var i=0; i<33; i++)
 		$("#"+i).removeClass("bg-primary");
