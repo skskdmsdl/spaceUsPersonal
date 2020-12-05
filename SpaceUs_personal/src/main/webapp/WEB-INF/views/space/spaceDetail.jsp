@@ -101,11 +101,9 @@ $(function(){
 	   		 $.ajax({
 			        type: "POST",
 					url : "${pageContext.request.contextPath}/space/heart.do",
-					//dataType: "JSON",
 					data :   {
 						spaceNo : "${space.spaceNo}",
 						email : "${loginMember.principal.memberEmail}"},
-					//contentType:"application/json;charset=UTF-8"
 					success: function(data){
 						console.log(data);
 						readLikeCnt();
