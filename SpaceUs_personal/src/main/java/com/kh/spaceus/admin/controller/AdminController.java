@@ -138,7 +138,6 @@ public class AdminController {
 		return "admin/blackListManage";
 	}
 	
-	
 	@GetMapping(value="/reasonList.do",
 				produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseBody

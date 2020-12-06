@@ -695,12 +695,10 @@ function naverShare() {
 							   			</h4>
 							   		<p style="padding-left:15px">${ qna.answer}</p>
 				   					<h4 style="text-align: right;">
-						   				<!-- <span style="width: 80px; height: 24.8px; margin: 3px;"> -->
 						   					<button type="button" class="btn btn-secondary answerbtn" data-toggle="modal" data-target="#answerModal" data-whatever="@fat" 
 						   						style="float: right; margin-right: 10px; margin-bottom:7px; letter-spacing:1px; color:#a6e4d2; font-weight:bold; font-size:13px;" onclick="selectQnaNo('${qna.qnaNo }');" 
 						   							value="${qna.qnaNo }">답변 수정</button>
 						   					
-				   						<!-- </span> -->   						
 					   				</h4>
 					   			</div>
 					   		</div>
