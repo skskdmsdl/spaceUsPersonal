@@ -403,10 +403,6 @@ function naverShare() {
 				</sec:authorize>
 				<!-- 질문글 등록 모달창 끝-->
 				
-<!-- 				<div id="dialog">
-					<p>질문글을 삭제하시겠습니까?</p>
-				</div> -->
-				
 				<!-- 답변 모달창-->
 				<sec:authorize access="hasRole('HOST')">
 				<div class="modal fade" id="answerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
