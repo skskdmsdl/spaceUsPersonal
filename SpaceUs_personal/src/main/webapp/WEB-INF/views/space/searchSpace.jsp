@@ -352,7 +352,6 @@ function sortChange(obj){
 					
 				</form>				
 				<div class="container">
-					<!-- <button type="submit" class="search-btn search-detail" onclick="searchDetailSpace();">검색</button> -->
 					<input type="submit" value="검색" onclick="searchDetailSpace();" class="search-btn btn btn-primary search-detail" />
 				</div>
 			</div>
