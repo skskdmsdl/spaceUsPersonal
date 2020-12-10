@@ -72,8 +72,11 @@ public class AdminController {
 	
 	//Id로 입력시 회원목록 조회
 	@RequestMapping("/findUserList.do")
-	public String findUserList(Model model, @RequestParam String searchType, @RequestParam String searchKeyword,
-								HttpServletRequest request,@RequestParam(defaultValue = "1", value="cPage") int cPage) {
+	public String findUserList(Model model, 
+							   @RequestParam String searchType, 
+							   @RequestParam String searchKeyword,
+							   HttpServletRequest request,
+							   @RequestParam(defaultValue = "1", value="cPage") int cPage) {
 		
 		//페이징 처리
 		final int limit = 10;
