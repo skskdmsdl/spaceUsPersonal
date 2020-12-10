@@ -105,10 +105,6 @@
  				</div>
  			</div>
     
-<%-- <c:out value="${datelist}"/>
-<c:out value="${revenuelist}"/> --%>
-
-
 <script src="${pageContext.request.contextPath }/resources/js/Chart.js"></script>
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.5.1.js"></script>
 <script src="${ pageContext.request.contextPath }/resources/assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
