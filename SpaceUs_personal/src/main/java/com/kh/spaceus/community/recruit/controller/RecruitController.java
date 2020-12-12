@@ -393,7 +393,7 @@ public class RecruitController {
 										@RequestParam(defaultValue = "1", value = "cPage") int cPage,
 										HttpServletRequest request) {
 		//1.사용자 입력값 
-		final int limit = 10; //사용용도는 numPerPage와 똑같음
+		final int limit = 10; 
 		int offset = (cPage - 1) * limit;
 		
 		//2. 업무로직
