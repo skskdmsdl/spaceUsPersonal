@@ -21,9 +21,7 @@
 
         <div class="page-wrapper">
             <div class="container-fluid">
-                <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
                         <h4 class="text-themecolor ml-5">마이페이지</h4>
@@ -176,8 +174,6 @@
 													  <input type="hidden" name="content"  />
 													  <div class="input-group mb-3" style="padding:0px;">
 													  <div class="custom-file">
-													    <%-- <input type="file" class="custom-file-input" name="upFile" id="upFile1" >
-													    <label class="custom-file-label" for="upFile1">${list.rname }</label> --%>
 													  </div>
 													</div>
 					                         	</div>
