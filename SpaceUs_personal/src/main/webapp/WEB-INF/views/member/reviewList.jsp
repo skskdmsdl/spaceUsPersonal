@@ -287,7 +287,6 @@ $(".submit").click(function(){
 	$(this).siblings("textarea").val(reContent.replace(keyRegExp, "❤❤"));
 	
 	$("[name=content]").val($(this).siblings("textarea").val());
-	/* alert($(this).siblings("textarea").val()); */
 
 	return true;
 });
