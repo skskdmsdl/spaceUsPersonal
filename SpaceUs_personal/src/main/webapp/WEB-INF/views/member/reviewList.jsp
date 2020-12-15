@@ -264,7 +264,6 @@ $(".reviewBtn").on("click", function(){
 });
 //별 받기
  $(".star-box i").on("click", function(){
-	 /* alert($(this).hasClass("star1")?"1":$(this).hasClass("star2")?"2":$(this).hasClass("star3")?"3":$(this).hasClass("star4")?"4":"5");  */
 	$("[name=starRating]").val($(this).hasClass("star1")?"1":$(this).hasClass("star2")?"2":$(this).hasClass("star3")?"3":$(this).hasClass("star4")?"4":"5");
 }); 
  //리뷰 유효성 검사
