@@ -209,8 +209,6 @@ $("#nickName").on("blur", function(){
 	//닉네임 공백 입력불가
 	    let a = $(this).val().replace(/ /gi, '');
 	    $(this).val(a);
-		//$(".nickNameFalse").show();
-		//$("#nickName").val();
 	if($(this).val()==$(this).siblings('input').val()){
 		$(".nickNameCheck").removeClass('show');
 		$(".nickNameFalse").hide();
