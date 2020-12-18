@@ -150,7 +150,6 @@
 					                           </div>
 												</form>
 					                           
-												
 											<!-- 리뷰수정 -->	
 											<div class="pl-5 pr-5 reviewUpdateFrm" style="height: 150px; display: none;" >
 				                         	<div class="row pl-3 align-items-xl-center">

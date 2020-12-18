@@ -49,9 +49,6 @@ input[type=file], .address-input {margin-bottom:20px; margin-top:10px;}
         </div>
       </div>
     </div>
-
-
-
     <!-- 글등록시작-->
 	<section class="blog-section spad">
                  <div class="m-5">
@@ -107,7 +104,6 @@ input[type=file], .address-input {margin-bottom:20px; margin-top:10px;}
              </section>
     <!-- 글등록 끝-->
 <!-- 컨텐츠 끝 -->
-    
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/smartEditor/js/HuskyEZCreator.js"></script>
 <script type="text/javascript"> 
