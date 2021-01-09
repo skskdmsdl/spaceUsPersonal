@@ -5,16 +5,19 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!-- 한글 인코딩처리 -->
-<fmt:requestEncoding value="utf-8"/>
-<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-<link href="https://cdn.materialdesignicons.com/5.5.55/css/materialdesignicons.min.css" rel="stylesheet">
+<fmt:requestEncoding value="utf-8" />
+<jsp:include page="/WEB-INF/views/common/header.jsp" />
+<link
+	href="https://cdn.materialdesignicons.com/5.5.55/css/materialdesignicons.min.css"
+	rel="stylesheet">
 <link
 	href="https://cdn.materialdesignicons.com/5.5.55/css/materialdesignicons.min.css"
 	rel="stylesheet">
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f812560fa3200866e643713203eb962f&libraries=services"></script>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f812560fa3200866e643713203eb962f&libraries=services"></script>
 <style>
 .prev, .next {
 	cursor: pointer;
@@ -28,40 +31,77 @@
 	transition: 0.6s ease;
 	border-radius: 0 3px 3px 0;
 }
+
 .next {
 	margin-right: 16px;
 	right: 0;
 	border-radius: 3px 0 0 3px;
 }
-.prev:hover, .next:hover {opacity: 0.3;}
-.popover-body img {width: 30px;	margin-right: 10px;}
-.popover-body img:hover {cursor: pointer;}
+
+.prev:hover, .next:hover {
+	opacity: 0.3;
+}
+
+.popover-body img {
+	width: 30px;
+	margin-right: 10px;
+}
+
+.popover-body img:hover {
+	cursor: pointer;
+}
+
 .fa-share-square, .fa-heart {
 	color: #333;
 	font-size: 25px;
-	cursor:pointer;
+	cursor: pointer;
 }
-.fa-eye{color: #333; margin-right:3px;}
-.fab {margin-right: 5px;}
-a:hover {opacity: 0.3; color: black;}
+
+.fa-eye {
+	color: #333;
+	margin-right: 3px;
+}
+
+.fab {
+	margin-right: 5px;
+}
+
+a:hover {
+	opacity: 0.3;
+	color: black;
+}
+
 .fade1 {
 	-webkit-animation-name: fade;
 	-webkit-animation-duration: 1.5s;
 	animation-name: fade;
 	animation-duration: 1.5s;
 }
+
 @
 -webkit-keyframes fade1 {
-	from {opacity: .4}
-to {opacity: 1}
+	from {opacity: .4
+}
+
+to {
+	opacity: 1
+}
+
 }
 @
 keyframes fade1 {
-	from {opacity: .4}
-to {opacity: 1}
+	from {opacity: .4
+}
+
+to {
+	opacity: 1
+}
+
 }
 @media only screen and (max-width: 300px) {
-	.prev, .next, .text {font-size: 11px}
+	.prev, .next, .text {
+		font-size: 11px
+	}
 }
 /* 리뷰 */
 .btn-group-toggle {
@@ -69,9 +109,10 @@ to {opacity: 1}
 	position: absolute;
 	right: 85px;
 }
-.reviewLabel {font-size: 11px;}
 
-
+.reviewLabel {
+	font-size: 11px;
+}
 </style>
 <script>
 
@@ -201,17 +242,18 @@ function naverShare() {
 				<div class="property-details">
 					<c:if test="${ not empty space.attachList}">
 						<c:forEach items="${ space.attachList }" var="attach">
-								<div class="mySlides fade1">
-									<div class="img"
-										style="background-image: url(${pageContext.request.contextPath }/resources/upload/space/${attach.rname });"></div>
-								</div>
+							<div class="mySlides fade1">
+								<div class="img"
+									style="background-image: url(${pageContext.request.contextPath }/resources/upload/space/${attach.rname });"></div>
+							</div>
 						</c:forEach>
 					</c:if>
 					<i class="prev fas fa-chevron-left fa-2x" onclick="plusSlides(-1)"></i>
 					<i class="next fas fa-chevron-right fa-2x" onclick="plusSlides(1)"></i>
 					<div class="text text-center">
 						<div style="text-align: right; padding-right: 5px">
-							<i class="fa fa-eye fa-2x" style="color: black;font-size: x-large;"></i>
+							<i class="fa fa-eye fa-2x"
+								style="color: black; font-size: x-large;"></i>
 							<c:if test="${ empty space.views }">
 								<span class="mr-2">0</span>
 							</c:if>
@@ -219,32 +261,41 @@ function naverShare() {
 								<span class="mr-2">${ space.views }</span>
 							</c:if>
 							<c:choose>
-							<c:when test="${ loginMember.principal.memberEmail != null }">
-							<a href=javascript:; id="heart-a"><i id="addLike" class="far fa-heart" style="margin:2px;"></i></a>
-							<span class="like-count"></span>
-							</c:when>
-							<c:otherwise>
-							<i id="likeLogin" class="far fa-heart" style="margin:2px;"></i>
-							<span class="like-count"></span>
-							</c:otherwise>
+								<c:when test="${ loginMember.principal.memberEmail != null }">
+									<a href=javascript:; id="heart-a"><i id="addLike"
+										class="far fa-heart" style="margin: 2px;"></i></a>
+									<span class="like-count"></span>
+								</c:when>
+								<c:otherwise>
+									<i id="likeLogin" class="far fa-heart" style="margin: 2px;"></i>
+									<span class="like-count"></span>
+								</c:otherwise>
 							</c:choose>
-							&emsp; 
-							<i class="far fa-share-square"></i>
-							<div class="d-none" id="a1" style="padding:5px; font-size: 16px; border:1px solid #efefef; right: 140px;top: 420px;position: absolute; z-index: 10;background-color: white; width:250px; text-align: center; border-radius: 5px;" >
-								<p style="border-bottom:1px solid #efefef; padding:5px;">공유하기</p>
+							&emsp; <i class="far fa-share-square"></i>
+							<div class="d-none" id="a1"
+								style="padding: 5px; font-size: 16px; border: 1px solid #efefef; right: 140px; top: 420px; position: absolute; z-index: 10; background-color: white; width: 250px; text-align: center; border-radius: 5px;">
+								<p style="border-bottom: 1px solid #efefef; padding: 5px;">공유하기</p>
 								<div class="popover-body">
-									<img src="${pageContext.request.contextPath }/resources/images/icons/kakao-icon.png" id="kakao-link-btn"/> 
-									<img src="${pageContext.request.contextPath }/resources/images/icons/twitter-icon.png" onclick="twitterShare();" />
-									<img src="${pageContext.request.contextPath }/resources/images/icons/naver-icon.jpg" onclick="naverShare();" />
-									<input class="input-group-text w-100 mt-4 mb-2" type="text" id="url-input">
-									<button class="btn btn-primary w-100" id="url-btn" onclick="urlcopy();">URL 복사</button>
+									<img
+										src="${pageContext.request.contextPath }/resources/images/icons/kakao-icon.png"
+										id="kakao-link-btn" /> <img
+										src="${pageContext.request.contextPath }/resources/images/icons/twitter-icon.png"
+										onclick="twitterShare();" /> <img
+										src="${pageContext.request.contextPath }/resources/images/icons/naver-icon.jpg"
+										onclick="naverShare();" /> <input
+										class="input-group-text w-100 mt-4 mb-2" type="text"
+										id="url-input">
+									<button class="btn btn-primary w-100" id="url-btn"
+										onclick="urlcopy();">URL 복사</button>
 								</div>
 							</div>
 							<!-- 공유하기 팝오버 끝-->
 							<!-- 예약버튼 -->
-							<input type="hidden" name="memberId" id="memberId" value="${loginMember.principal.memberEmail}" />
-							<input type="submit" onclick="rvSubmit();" value="예약하기"
-								class="btn py-3 px-5 btn-primary font-bold" style="font-size:16px;margin-left: 70px"> 
+							<input type="hidden" name="memberId" id="memberId"
+								value="${loginMember.principal.memberEmail}" /> <input
+								type="submit" onclick="rvSubmit();" value="예약하기"
+								class="btn py-3 px-5 btn-primary font-bold"
+								style="font-size: 16px; margin-left: 70px">
 							<form id="reserveFrm">
 								<input type="hidden" name="spaceNo" value="${ space.spaceNo }" />
 							</form>
@@ -287,33 +338,36 @@ function naverShare() {
 
 					<div class="tab-content" id="detail-tabContent">
 						<!-- contact 시작 -->
-						<div class="tab-pane fade show active" id="detail-description" role="tabpanel"
-							aria-labelledby="detail-manufacturer-tab" style="padding-top: 50px;">
+						<div class="tab-pane fade show active" id="detail-description"
+							role="tabpanel" aria-labelledby="detail-manufacturer-tab"
+							style="padding-top: 50px;">
 							<div class="row pb-5" style="border-bottom: 1px solid #ddd;">
 								<c:choose>
 									<c:when test="${ empty optionList }">
-										<p style="font-size: 16px; padding-left:100px;">
-			                              	옵션 없음</p>
-		                             </c:when>
-		                             <c:otherwise>
+										<p style="font-size: 16px; padding-left: 100px;">옵션 없음</p>
+									</c:when>
+									<c:otherwise>
 										<c:forEach items="${optionList}" var="info" varStatus="vs">
-										<div class="col-md-4">
-											<ul class="features">
-												<li class="check"><span class="ion-ios-checkmark"></span>${ info.optionName }</li>
-											</ul>
-										</div>
-										</c:forEach>									      		                             
-		                             </c:otherwise>
-	                           </c:choose>
-							</div>	
-							<!-- 공간설명 시작-->
-							<div class="col-11" style="margin-bottom:70px; padding-left:80px;">
-								<p style="font-size: 16px; min-height:300px; padding-top: 50px; line-height: 30px;">
-									${ space.content } <br /> </p>
+											<div class="col-md-4">
+												<ul class="features">
+													<li class="check"><span class="ion-ios-checkmark"></span>${ info.optionName }</li>
+												</ul>
+											</div>
+										</c:forEach>
+									</c:otherwise>
+								</c:choose>
 							</div>
-							<!-- 공간위치 -->	
+							<!-- 공간설명 시작-->
+							<div class="col-11"
+								style="margin-bottom: 70px; padding-left: 80px;">
+								<p
+									style="font-size: 16px; min-height: 300px; padding-top: 50px; line-height: 30px;">
+									${ space.content } <br />
+								</p>
+							</div>
+							<!-- 공간위치 -->
 							<div class="row" style="margin-left: 5em;">
-								<div id="kakaomap" style="width:450px;height:400px; "></div>
+								<div id="kakaomap" style="width: 450px; height: 400px;"></div>
 								<div class="contact-info" style="padding-left: 70px;">
 									<div class="ci-item">
 										<div class="ci-icon">
@@ -348,384 +402,503 @@ function naverShare() {
 							</div>
 						</div>
 						<!-- contact 끝 -->
-<input type="hidden" id="spaceCon" value="${ space.content }" />
-<input type="hidden" id="spaceAddr" value="${ space.address }" />
-<input type="hidden" id="spaceTitle" value="${ space.spaceName }" />
-						
-<div class="tab-pane fade" id="detail-qna" role="tabpanel" aria-labelledby="detail-qna-tab">
-     <div class="row mt-5">
-   		<div class="col-md-10" style="margin: 0 auto;">
-   			<h3 class="head fa fa-pencil"> ${qnaTotal }개의 질문글</h3>
-   				
-			 	<!-- 질문글 등록 모달창 -->
-				<sec:authorize access="hasAnyRole('USER','HOST')"> 
-				
-				<!-- 질문글쓰기 버튼 -->
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#qnaModal" data-whatever="@fat" style="float: right; margin-right: 70px; letter-spacing:1px; font-weight:bold; font-size:1em;">질문글 작성</button>
-				<div class="modal fade" id="qnaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				  <div class="modal-dialog" role="document">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <h5 class="modal-title  fa fa-pencil" id="exampleModalLabel" style="letter-spacing:1px; font-weight:bold;">질문글 작성</h5>
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				          <span aria-hidden="true">&times;</span>
-				        </button>
-				      </div>
-				      <div class="modal-body">
-				      	<form id="ask-question">
-				      
-				          <div class="form-group">
-				            <label for="recipient-name" class="col-form-label">글쓴이</label>
-				            <input type="text" class="form-control" name ="name" id="qna-name" value="${loginMember.principal.nickName }" placeholder="${loginMember.principal.nickName }" readonly>
-				           
-				          </div>
-				          <div class="form-group">
-				            <label for="message-text" class="col-form-label">내용</label>
-				            <textarea class="form-control" id="message-text" name="content" style="height: 400px;" ></textarea>
-				          </div>
-				            <div class="form-group">
-				            <label for="qna-status" >비밀글</label>
-				            <input type="checkbox" name = "status" class="form-control" style="width: 27px; height: 24px;" id="qna-status" value="false" onClick="onCheck();">
-				          </div>
-		   				 	<input type="hidden" name = "email" value="${loginMember.principal.memberEmail }" />
-		   				 	<input type="hidden" name = "spaceNo" value="${ space.spaceNo }" />
-				        </form>
-				      </div>
-				      <div class="modal-footer">
-				        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-right:10px; letter-spacing: 2px;">닫기</button>
-		   			  <input class="btn btn-primary" value = "전송" type="submit" onclick="ask();" 
-		   					style="float:right; margin-right:10px; letter-spacing: 2px; ">
-				        
-				      </div>
-				    </div>
-				  </div>
-				</div>
-				</sec:authorize>
-				<!-- 질문글 등록 모달창 끝-->
-				
-				<!-- 답변 모달창-->
-				<sec:authorize access="hasRole('HOST')">
-				<div class="modal fade" id="answerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				  <div class="modal-dialog" role="document">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <h5 class="modal-title  fa fa-pencil" id="exampleModalLabel" style="letter-spacing:1px; font-weight:bold;">답변 작성</h5>
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				          <span aria-hidden="true">&times;</span>
-				        </button>
-				      </div>
-				      <div class="modal-body">
-				      	<form id="answerFrm" action="${pageContext.request.contextPath }/qna/sendAnswer.do">
-				      
-				          <div class="form-group">
-				            <label for="recipient-name" class="col-form-label">호스트</label>
-				            <input type="text" class="form-control" value="${loginMember.principal.nickName }" placeholder="${loginMember.principal.nickName }" readonly>
-				           
-				          </div>
-				          <div class="form-group">
-				            <label for="answer-content" class="col-form-label">내용</label>
-				            <textarea class="form-control" id="answer-content" name="answer" style="height: 400px;" ></textarea>
-				          </div>
-				           	<input type="hidden" name = "qnaNo" id="qnaNo" />
-		   				 	<input type="hidden" name = "spaceNo" value="${ space.spaceNo }" /> 
-				        </form>
-				      </div>
-				      <div class="modal-footer">
-				        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-right:10px; letter-spacing: 2px;">닫기</button>
-		   			  <input class="btn btn-primary" value = "전송" type="submit" onclick="sendAnswer();" 
-		   					style="float:right; margin-right:10px; letter-spacing: 2px; ">
-				        
-				      </div>
-				    </div>
-				  </div>
-				</div>
-				</sec:authorize>
-				<!-- 질문글 답변 모달창 끝 -->
-					<!-- 질문글 수정 모달창 -->			
-				 <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				  <div class="modal-dialog" role="document">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <h5 class="modal-title  fa fa-pencil" id="exampleModalLabel" style="letter-spacing:1px; font-weight:bold;">질문글 수정</h5>
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				          <span aria-hidden="true">&times;</span>
-				        </button>
-				      </div>
-				      <div class="modal-body">
-				      	<form id="modifyFrm">
-				      
-				          <div class="form-group">
-				            <label for="recipient-name" class="col-form-label">글쓴이</label>
-				            <input type="text" class="form-control" name ="name" id="modify-name" value="${loginMember.principal.nickName }" placeholder="${loginMember.principal.nickName }" readonly>
-				           
-				          </div>
-				          <div class="form-group">
-				            <label for="message-text" class="col-form-label">내용</label>
-				            <textarea class="form-control" id="modify-text" name="content" style="height: 400px;" ></textarea>
-				          </div>
-				            <div class="form-group">
-				            <label for="qna-status" >비밀글</label>
-				            <input type="checkbox" name = "status" class="form-control" style="width: 27px; height: 24px;" id="modify-status" value="false" onClick="modifyCheck();">
-				          </div>
-		   				 	<input type="hidden" name = "qnaNo" id="modifyNo"/>
-		   				 	<input type="hidden" name = "spaceNo" value="${ space.spaceNo }" />
-				        </form>
-				      </div>
-				      <div class="modal-footer">
-				        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-right:10px; letter-spacing: 2px;">닫기</button>
-		   			  <input class="btn btn-primary" value = "전송" type="submit" onclick="modifyBtn();" 
-		   					style="float:right; margin-right:10px; letter-spacing: 2px; ">
-				        
-				      </div>
-				    </div>
-				  </div>
-				</div>	 
-				<!-- 질문글 삭제 Modal -->
-				<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-				  <div class="modal-dialog" role="document">
-				    <div class="modal-content">
-				    
-				      <div class="modal-header">
-				        <h5 class="modal-title" id="deleteModalLabel">질문글 삭제</h5>
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				          <span aria-hidden="true"></span>
-				        </button>
-				      </div>
-				      
-				    <!-- _csrf 인증 토큰 발행 -->
-				    <form:form 
-				    	action="${pageContext.request.contextPath }/qna/deleteQuestion.do" 
-				    	method="POST">
-				      <div class="modal-body">
-				      	<span>질문글을 삭제하시겠습니까?</span>
-				        <input type="hidden" class="form-control" 
-				        				name="spaceNo" value="${space.spaceNo }" />
-				        <br />
-						 <input type="hidden" id="deleteNo" class="form-control" 
-				        				name="qnaNo" />        
-				      </div>
-				      
-				      <div class="modal-footer">
-				        <button type="submit" class="btn btn-outline-success deleteQ">삭제</button>
-				        <button type="button" class="btn btn-outline-success" data-dismiss="modal">취소</button>
-				      </div>
-				    </form:form>
-				    </div>
-				  </div>
-				</div>
-				
-		 	<!-- 질문글 시작 -->
-		 	<c:if test="${ not empty qlist }">
-			<c:forEach items="${ qlist }" var="qna" varStatus="vs">
-			<div class="review d-flex">
-		   		<div class="desc" style=" padding:5px;">
-		   			<h4>
-		   			<span class="text-left badge" style="font-size: 20px;">Q.</span>
-		   			</h4>
-		   			<h4>
-		   				<span class="text-left badge mb-3" style="padding-left:20px;">${ qna.name}</span>
-		   				<span class="text-right pr-2"><fmt:formatDate value="${ qna.date}" pattern="yyyy-MM-dd"/></span>
-		   			</h4>
-		   			<c:choose>
-		   				<c:when test="${qna.status eq false}">
-   											<div style="margin-right:15px;">
-						   			   		 <p style="padding:0 20px; text-align:justify;">${qna.content }</p>
-						   			    	</div>
-   										<!-- 질문 작성자일 때 수정삭제 가능 -->
-			   			 				<sec:authorize access="hasAnyRole('HOST', 'USER')">
-   										<sec:authentication property="principal.username" var="loginMember"/>
-   											<c:if test="${loginMember != null && loginMember eq qna.email }">
-   												
-   											
-   												<button type="button" class="btn btn-secondary modify" data-toggle="modal" data-target="#modifyModal" data-whatever="@fat" 
-						   						style="float: right; margin-right: 10px; margin-bottom:7px; letter-spacing:1px; color:#a6e4d2; font-weight:bold; font-size:13px;" onclick="popModify('${qna.qnaNo }');" 
-						   							value="${qna.qnaNo }">수정</button>
-						   						
-   												<button type="button" class="btn btn-secondary"
-						   						style="float: right; margin-right: 10px; margin-bottom:7px; letter-spacing:1px; color:#a6e4d2; font-weight:bold; font-size:13px;" onclick="deleteBtn('${qna.qnaNo }');" 
-						   							value="${qna.qnaNo }">삭제</button>
-						   							
-   											
-   											</c:if>
-   										 </sec:authorize> 
-		   			 	</c:when>
-		   			 	
-		   			 	<c:otherwise>
-		   			 		<p style="padding-left:20px; text-align:justify; color: #a1beb6;"><i class="fa fa-lock">비공개</i></p>
-		   			 		
-		   			 		<!-- 비공개 질문은 호스트와 질문 작성자, 관리자가 조회 가능 -->
-		   			 		<sec:authorize access="hasAnyRole('HOST', 'USER')">
-   							<sec:authentication property="principal.username" var="loginMember"/>
-   								
-								<c:if test="${loginMember != null && loginMember eq qna.email && loginMember ne space.memberEmail }">
-										<div style="margin-right:15px;">
-					   			   		 <p style="padding:0 20px; text-align:justify;">${qna.content }</p>
-					   			    	</div>
- 												<button type="button" class="btn btn-secondary modify" data-toggle="modal" data-target="#modifyModal" data-whatever="@fat" 
-				   						style="float: right; margin-right: 10px; margin-bottom:7px; letter-spacing:1px; color:#a6e4d2; font-weight:bold; font-size:13px;" onclick="popModify('${qna.qnaNo }');" 
-				   							>수정</button>
- 												<button type="button" class="btn btn-secondary" 
-				   						style="float: right; margin-right: 10px; margin-bottom:7px; letter-spacing:1px; color:#a6e4d2; font-weight:bold; font-size:13px;" onclick="deleteBtn('${qna.qnaNo }');" 
-				   							value="${qna.qnaNo }">삭제</button>
- 												
-								</c:if>
-   								<c:if test="${loginMember != null && loginMember eq space.memberEmail }">
-			   			 			<div style="margin-right:15px;">
-					   			   		 <p style="padding:0 20px; text-align:justify;">${qna.content }</p>
-					   			    </div>
-			   			 				<sec:authorize access="hasAnyRole('HOST', 'USER')">
-   										<sec:authentication property="principal.username" var="loginMember"/>
-   											<c:if test="${ loginMember eq qna.email }">
-   												
-   											
-   												<button type="button" class="btn btn-secondary modify" data-toggle="modal" data-target="#modifyModal" data-whatever="@fat" 
-						   						style="float: right; margin-right: 10px; margin-bottom:7px; letter-spacing:1px; color:#a6e4d2; font-weight:bold; font-size:13px;" onclick="popModify('${qna.qnaNo }');" 
-						   							value="${qna.qnaNo }">수정</button>
-						   						
-   												<button type="button" class="btn btn-secondary"
-						   						style="float: right; margin-right: 10px; margin-bottom:7px; letter-spacing:1px; color:#a6e4d2; font-weight:bold; font-size:13px;" onclick="deleteBtn('${qna.qnaNo }');" 
-						   							value="${qna.qnaNo }">삭제</button>
-						   					</c:if>
+						<input type="hidden" id="spaceCon" value="${ space.content }" />
+						<input type="hidden" id="spaceAddr" value="${ space.address }" />
+						<input type="hidden" id="spaceTitle" value="${ space.spaceName }" />
+
+						<div class="tab-pane fade" id="detail-qna" role="tabpanel"
+							aria-labelledby="detail-qna-tab">
+							<div class="row mt-5">
+								<div class="col-md-10" style="margin: 0 auto;">
+									<h3 class="head fa fa-pencil">${qnaTotal }개의 질문글</h3>
+
+									<!-- 질문글 등록 모달창 -->
+									<sec:authorize access="hasAnyRole('USER','HOST')">
+
+										<!-- 질문글쓰기 버튼 -->
+										<button type="button" class="btn btn-primary"
+											data-toggle="modal" data-target="#qnaModal"
+											data-whatever="@fat"
+											style="float: right; margin-right: 70px; letter-spacing: 1px; font-weight: bold; font-size: 1em;">질문글
+											작성</button>
+										<div class="modal fade" id="qnaModal" tabindex="-1"
+											role="dialog" aria-labelledby="exampleModalLabel"
+											aria-hidden="true">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title  fa fa-pencil"
+															id="exampleModalLabel"
+															style="letter-spacing: 1px; font-weight: bold;">질문글
+															작성</h5>
+														<button type="button" class="close" data-dismiss="modal"
+															aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														<form id="ask-question">
+
+															<div class="form-group">
+																<label for="recipient-name" class="col-form-label">글쓴이</label>
+																<input type="text" class="form-control" name="name"
+																	id="qna-name"
+																	value="${loginMember.principal.nickName }"
+																	placeholder="${loginMember.principal.nickName }"
+																	readonly>
+
+															</div>
+															<div class="form-group">
+																<label for="message-text" class="col-form-label">내용</label>
+																<textarea class="form-control" id="message-text"
+																	name="content" style="height: 400px;"></textarea>
+															</div>
+															<div class="form-group">
+																<label for="qna-status">비밀글</label> <input
+																	type="checkbox" name="status" class="form-control"
+																	style="width: 27px; height: 24px;" id="qna-status"
+																	value="false" onClick="onCheck();">
+															</div>
+															<input type="hidden" name="email"
+																value="${loginMember.principal.memberEmail }" /> <input
+																type="hidden" name="spaceNo" value="${ space.spaceNo }" />
+														</form>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary"
+															data-dismiss="modal"
+															style="margin-right: 10px; letter-spacing: 2px;">닫기</button>
+														<input class="btn btn-primary" value="전송" type="submit"
+															onclick="ask();"
+															style="float: right; margin-right: 10px; letter-spacing: 2px;">
+
+													</div>
+												</div>
+											</div>
+										</div>
 									</sec:authorize>
-			   			 		</c:if>
-		   			 		</sec:authorize>
-		   			 		
-		   			 		<sec:authorize access="hasRole('ADMIN')">
-			   			 			<div style="margin-right:15px;">
-					   			   		 <p style="padding:0 20px; text-align:justify;">${qna.content }</p>
-					   			    </div>
-		   			 		</sec:authorize>
-		   			 	</c:otherwise>
-		   			</c:choose>
-		   			
-		   			<!-- 호스트 권한을 갖고 있고 해당 공간의 호스트의 메일과 로그인 유저의 메일이 동일하면 답변하기 버튼 생성 -->
-	   				<sec:authorize access="hasRole('HOST')">
-   					<sec:authentication property="principal.username" var="loginMember"/>
-   					<c:if test="${loginMember != null && loginMember eq space.memberEmail && qna.answer == null}">
-   						
-	 					<h4 style="text-align: center;">
-		   					
-		   					<button type="button" class="btn btn-primary answerbtn" data-toggle="modal" data-target="#answerModal" data-whatever="@fat" 
-					   						style="margin-right: 70px; margin-bottom:7px; letter-spacing:1px; font-weight:bold; font-size:13px;" onclick="selectQnaNo('${qna.qnaNo}');">답변하기</button>
-	   					</h4> 
-   					</c:if>
-   					</sec:authorize>
-   					
-		   		</div>
-		   		
-		   	</div> 
-		   	
-		
-		   		<!-- 답변 내용이 있고 공개질문글일때의 답변 출력-->
-				<c:if test="${ qna.answer != null && qna.status eq false }">
-				
-	   			<div class="review d-flex" style="padding:0 10px 20px 10px; margin-left:30px;">
-			   		<div class="desc" style="background-color:#f4f4f4;  padding:15px; border-radius:10px;">
-			   			<h4>
-			   				<span class="text-left" style="font-color: #a1beb6; font-size:13px;">
-							   				<i class="mdi mdi-subdirectory-arrow-right"></i><b>A.</b> 
-							   						호스트님의 답글</span>
-			   			</h4>
-			   			<p style="padding-left:15px">${ qna.answer}</p>
-			   			<sec:authorize access="hasRole('HOST')">
-			   			<sec:authentication property="principal.username" var="loginMember"/>
-			   			<c:if test="${loginMember eq space.memberEmail}">
-			   			<h4 style="text-align: right;">
-						   				<!-- <span style="width: 80px; height: 24.8px; margin: 3px;"> -->
-						   					<button type="button" class="btn btn-secondary answerbtn" data-toggle="modal" data-target="#answerModal" data-whatever="@fat" 
-						   						style="float: right; margin-right: 10px; margin-bottom:7px; letter-spacing:1px; color:#a6e4d2; font-weight:bold; font-size:13px;" onclick="selectQnaNo('${qna.qnaNo }');" 
-						   							value="${qna.qnaNo }">답변 수정</button>
-						   					
-				   						<!-- </span> -->   						
-					   				</h4>
-					   	</c:if>
-					   	</sec:authorize>
-			   		</div>
-			   	</div>
-			   	
-			   	</c:if>
-			   	<!-- 답변내용이 있고 비공개질문글일때 -->
-			   	<c:if test="${ qna.answer != null && qna.status eq true }">
-			   		<!-- 관리자이거나 -->
-			   		<sec:authorize access="hasRole('ADMIN')">
-				   		<div class="review d-flex" style="padding:0 10px 20px 10px; margin-left:30px;">
-					   		<div class="desc" style="background-color:#f4f4f4; padding:15px; border-radius:10px;">
-					   			<h4>
-					   				<span class="text-left" style="color: #a1beb6; font-size:13px;">
-							   				<i class="mdi mdi-subdirectory-arrow-right"></i><b>A.</b> 
-							   						호스트님의 답글</span>
-					   			</h4>
-					   			<p style="padding-left:15px">${ qna.answer}</p>
-					   		</div>
-				   		</div>
-			   		</sec:authorize>
-			   		<!-- 유저인 경우 -->
-			   		<sec:authorize access="hasRole('USER')">
-		   			<sec:authentication property="principal.username" var="loginMember"/>
-		   			<!-- 로그인사용자가 글작성자일때 -->
-		   			<c:if test="${loginMember != null && loginMember eq qna.email }">
-		   				<div class="review d-flex" style="padding:0 10px 20px 10px; margin-left:30px;">
-					   		<div class="desc" style="background-color:#f4f4f4; padding:15px; border-radius:10px;">
-					   			<h4>
-					   				<span class="text-left" style="color: #a1beb6; font-size:13px;">
-							   				<i class="mdi mdi-subdirectory-arrow-right" ></i><b>A.</b> 
-							   						호스트님의 답글</span>
-					   			</h4>
-					   			<p style="padding-left:15px">${ qna.answer}</p>
-					   		</div>
-				   		</div>
-		   			</c:if>
-		   			</sec:authorize>
-		   			<sec:authorize access="hasRole('HOST')">
-			   		<!-- 호스트일 때 -->
-   					<sec:authentication property="principal.username" var="loginMember"/>
-   						
-		   					<c:if test="${loginMember != null && loginMember eq space.memberEmail }">
-		   					<div class="review d-flex" style="padding:0 10px 20px 10px; margin-left:30px;">
-						   		<div class="desc" style="background-color:#f4f4f4; padding:15px; border-radius:10px;">
-						   			<h4>
-							   				<span class="text-left" style="color: #a1beb6; font-size:13px;">
-							   				<i class="mdi mdi-subdirectory-arrow-right"></i><b>A.</b> 
-							   						호스트님의 답글</span>
-							   				
-							   			</h4>
-							   		<p style="padding-left:15px">${ qna.answer}</p>
-				   					<h4 style="text-align: right;">
-						   					<button type="button" class="btn btn-secondary answerbtn" data-toggle="modal" data-target="#answerModal" data-whatever="@fat" 
-						   						style="float: right; margin-right: 10px; margin-bottom:7px; letter-spacing:1px; color:#a6e4d2; font-weight:bold; font-size:13px;" onclick="selectQnaNo('${qna.qnaNo }');" 
-						   							value="${qna.qnaNo }">답변 수정</button>
-						   					
-					   				</h4>
-					   			</div>
-					   		</div>
-			   				</c:if>
-			   		<!-- 다른 공간의 호스트인데 비공개 글 작성자인경우 -->
-			   				<c:if test="${loginMember != null && loginMember eq qna.email && loginMember ne space.memberEmail }">
-			   				<div class="review d-flex" style="padding:0 10px 20px 10px; margin-left:30px;">
-					   		<div class="desc" style="background-color:#dfe8e6; padding:15px; border-radius:10px;">
-					   			<h4>
-					   				<span class="text-left" style="color:#a1beb6; font-size:13px;">
-							   				<i class="mdi mdi-subdirectory-arrow-right"></i><b>A.</b> 
-							   						호스트님의 답글</span>
-					   			</h4>
-					   			<p style="padding-left:15px">${ qna.answer}</p>
-					   		</div>
-				   			</div>
-			   				</c:if>
-		   				
-			   		</sec:authorize>
-			   	</c:if>
-			 	
-			</c:forEach>
-		   	</c:if>
-		   	<c:if test="${qnaTotal > qnaPaging+5 }">
-		   		<button type="button" class="btn btn-primary col-3 font-bold" style="margin-left: 33%;" name="qnaPaging" value="${ qnaPaging+5 }">더보기</button> 
-   			</c:if>
-   		</div>
-		   	
-   		</div>
-   		</div>
-<!-- qna끝 -->
+									<!-- 질문글 등록 모달창 끝-->
+
+									<!-- 답변 모달창-->
+									<sec:authorize access="hasRole('HOST')">
+										<div class="modal fade" id="answerModal" tabindex="-1"
+											role="dialog" aria-labelledby="exampleModalLabel"
+											aria-hidden="true">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title  fa fa-pencil"
+															id="exampleModalLabel"
+															style="letter-spacing: 1px; font-weight: bold;">답변
+															작성</h5>
+														<button type="button" class="close" data-dismiss="modal"
+															aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														<form id="answerFrm"
+															action="${pageContext.request.contextPath }/qna/sendAnswer.do">
+
+															<div class="form-group">
+																<label for="recipient-name" class="col-form-label">호스트</label>
+																<input type="text" class="form-control"
+																	value="${loginMember.principal.nickName }"
+																	placeholder="${loginMember.principal.nickName }"
+																	readonly>
+
+															</div>
+															<div class="form-group">
+																<label for="answer-content" class="col-form-label">내용</label>
+																<textarea class="form-control" id="answer-content"
+																	name="answer" style="height: 400px;"></textarea>
+															</div>
+															<input type="hidden" name="qnaNo" id="qnaNo" /> <input
+																type="hidden" name="spaceNo" value="${ space.spaceNo }" />
+														</form>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary"
+															data-dismiss="modal"
+															style="margin-right: 10px; letter-spacing: 2px;">닫기</button>
+														<input class="btn btn-primary" value="전송" type="submit"
+															onclick="sendAnswer();"
+															style="float: right; margin-right: 10px; letter-spacing: 2px;">
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</sec:authorize>
+									<!-- 질문글 답변 모달창 끝 -->
+									<!-- 질문글 수정 모달창 -->
+									<div class="modal fade" id="modifyModal" tabindex="-1"
+										role="dialog" aria-labelledby="exampleModalLabel"
+										aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title  fa fa-pencil"
+														id="exampleModalLabel"
+														style="letter-spacing: 1px; font-weight: bold;">질문글
+														수정</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													<form id="modifyFrm">
+
+														<div class="form-group">
+															<label for="recipient-name" class="col-form-label">글쓴이</label>
+															<input type="text" class="form-control" name="name"
+																id="modify-name"
+																value="${loginMember.principal.nickName }"
+																placeholder="${loginMember.principal.nickName }"
+																readonly>
+
+														</div>
+														<div class="form-group">
+															<label for="message-text" class="col-form-label">내용</label>
+															<textarea class="form-control" id="modify-text"
+																name="content" style="height: 400px;"></textarea>
+														</div>
+														<div class="form-group">
+															<label for="qna-status">비밀글</label> <input
+																type="checkbox" name="status" class="form-control"
+																style="width: 27px; height: 24px;" id="modify-status"
+																value="false" onClick="modifyCheck();">
+														</div>
+														<input type="hidden" name="qnaNo" id="modifyNo" /> <input
+															type="hidden" name="spaceNo" value="${ space.spaceNo }" />
+													</form>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-secondary"
+														data-dismiss="modal"
+														style="margin-right: 10px; letter-spacing: 2px;">닫기</button>
+													<input class="btn btn-primary" value="전송" type="submit"
+														onclick="modifyBtn();"
+														style="float: right; margin-right: 10px; letter-spacing: 2px;">
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 질문글 삭제 Modal -->
+									<div class="modal fade" id="deleteModal" tabindex="-1"
+										role="dialog" aria-labelledby="loginModalLabel"
+										aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+
+												<div class="modal-header">
+													<h5 class="modal-title" id="deleteModalLabel">질문글 삭제</h5>
+													<button type="button" class="close" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true"></span>
+													</button>
+												</div>
+
+												<!-- _csrf 인증 토큰 발행 -->
+												<form:form
+													action="${pageContext.request.contextPath }/qna/deleteQuestion.do"
+													method="POST">
+													<div class="modal-body">
+														<span>질문글을 삭제하시겠습니까?</span> <input type="hidden"
+															class="form-control" name="spaceNo"
+															value="${space.spaceNo }" /> <br /> <input
+															type="hidden" id="deleteNo" class="form-control"
+															name="qnaNo" />
+													</div>
+
+													<div class="modal-footer">
+														<button type="submit"
+															class="btn btn-outline-success deleteQ">삭제</button>
+														<button type="button" class="btn btn-outline-success"
+															data-dismiss="modal">취소</button>
+													</div>
+												</form:form>
+											</div>
+										</div>
+									</div>
+
+									<!-- 질문글 시작 -->
+									<c:if test="${ not empty qlist }">
+										<c:forEach items="${ qlist }" var="qna" varStatus="vs">
+											<div class="review d-flex">
+												<div class="desc" style="padding: 5px;">
+													<h4>
+														<span class="text-left badge" style="font-size: 20px;">Q.</span>
+													</h4>
+													<h4>
+														<span class="text-left badge mb-3"
+															style="padding-left: 20px;">${ qna.name}</span> <span
+															class="text-right pr-2"><fmt:formatDate
+																value="${ qna.date}" pattern="yyyy-MM-dd" /></span>
+													</h4>
+													<c:choose>
+														<c:when test="${qna.status eq false}">
+															<div style="margin-right: 15px;">
+																<p style="padding: 0 20px; text-align: justify;">${qna.content }</p>
+															</div>
+															<!-- 질문 작성자일 때 수정삭제 가능 -->
+															<sec:authorize access="hasAnyRole('HOST', 'USER')">
+																<sec:authentication property="principal.username"
+																	var="loginMember" />
+																<c:if
+																	test="${loginMember != null && loginMember eq qna.email }">
+
+
+																	<button type="button" class="btn btn-secondary modify"
+																		data-toggle="modal" data-target="#modifyModal"
+																		data-whatever="@fat"
+																		style="float: right; margin-right: 10px; margin-bottom: 7px; letter-spacing: 1px; color: #a6e4d2; font-weight: bold; font-size: 13px;"
+																		onclick="popModify('${qna.qnaNo }');"
+																		value="${qna.qnaNo }">수정</button>
+
+																	<button type="button" class="btn btn-secondary"
+																		style="float: right; margin-right: 10px; margin-bottom: 7px; letter-spacing: 1px; color: #a6e4d2; font-weight: bold; font-size: 13px;"
+																		onclick="deleteBtn('${qna.qnaNo }');"
+																		value="${qna.qnaNo }">삭제</button>
+
+
+																</c:if>
+															</sec:authorize>
+														</c:when>
+
+														<c:otherwise>
+															<p
+																style="padding-left: 20px; text-align: justify; color: #a1beb6;">
+																<i class="fa fa-lock">비공개</i>
+															</p>
+
+															<!-- 비공개 질문은 호스트와 질문 작성자, 관리자가 조회 가능 -->
+															<sec:authorize access="hasAnyRole('HOST', 'USER')">
+																<sec:authentication property="principal.username"
+																	var="loginMember" />
+
+																<c:if
+																	test="${loginMember != null && loginMember eq qna.email && loginMember ne space.memberEmail }">
+																	<div style="margin-right: 15px;">
+																		<p style="padding: 0 20px; text-align: justify;">${qna.content }</p>
+																	</div>
+																	<button type="button" class="btn btn-secondary modify"
+																		data-toggle="modal" data-target="#modifyModal"
+																		data-whatever="@fat"
+																		style="float: right; margin-right: 10px; margin-bottom: 7px; letter-spacing: 1px; color: #a6e4d2; font-weight: bold; font-size: 13px;"
+																		onclick="popModify('${qna.qnaNo }');">수정</button>
+																	<button type="button" class="btn btn-secondary"
+																		style="float: right; margin-right: 10px; margin-bottom: 7px; letter-spacing: 1px; color: #a6e4d2; font-weight: bold; font-size: 13px;"
+																		onclick="deleteBtn('${qna.qnaNo }');"
+																		value="${qna.qnaNo }">삭제</button>
+
+																</c:if>
+																<c:if
+																	test="${loginMember != null && loginMember eq space.memberEmail }">
+																	<div style="margin-right: 15px;">
+																		<p style="padding: 0 20px; text-align: justify;">${qna.content }</p>
+																	</div>
+																	<sec:authorize access="hasAnyRole('HOST', 'USER')">
+																		<sec:authentication property="principal.username"
+																			var="loginMember" />
+																		<c:if test="${ loginMember eq qna.email }">
+
+
+																			<button type="button"
+																				class="btn btn-secondary modify" data-toggle="modal"
+																				data-target="#modifyModal" data-whatever="@fat"
+																				style="float: right; margin-right: 10px; margin-bottom: 7px; letter-spacing: 1px; color: #a6e4d2; font-weight: bold; font-size: 13px;"
+																				onclick="popModify('${qna.qnaNo }');"
+																				value="${qna.qnaNo }">수정</button>
+
+																			<button type="button" class="btn btn-secondary"
+																				style="float: right; margin-right: 10px; margin-bottom: 7px; letter-spacing: 1px; color: #a6e4d2; font-weight: bold; font-size: 13px;"
+																				onclick="deleteBtn('${qna.qnaNo }');"
+																				value="${qna.qnaNo }">삭제</button>
+																		</c:if>
+																	</sec:authorize>
+																</c:if>
+															</sec:authorize>
+
+															<sec:authorize access="hasRole('ADMIN')">
+																<div style="margin-right: 15px;">
+																	<p style="padding: 0 20px; text-align: justify;">${qna.content }</p>
+																</div>
+															</sec:authorize>
+														</c:otherwise>
+													</c:choose>
+
+													<!-- 호스트 권한을 갖고 있고 해당 공간의 호스트의 메일과 로그인 유저의 메일이 동일하면 답변하기 버튼 생성 -->
+													<sec:authorize access="hasRole('HOST')">
+														<sec:authentication property="principal.username"
+															var="loginMember" />
+														<c:if
+															test="${loginMember != null && loginMember eq space.memberEmail && qna.answer == null}">
+
+															<h4 style="text-align: center;">
+
+																<button type="button" class="btn btn-primary answerbtn"
+																	data-toggle="modal" data-target="#answerModal"
+																	data-whatever="@fat"
+																	style="margin-right: 70px; margin-bottom: 7px; letter-spacing: 1px; font-weight: bold; font-size: 13px;"
+																	onclick="selectQnaNo('${qna.qnaNo}');">답변하기</button>
+															</h4>
+														</c:if>
+													</sec:authorize>
+
+												</div>
+
+											</div>
+
+
+											<!-- 답변 내용이 있고 공개질문글일때의 답변 출력-->
+											<c:if test="${ qna.answer != null && qna.status eq false }">
+
+												<div class="review d-flex"
+													style="padding: 0 10px 20px 10px; margin-left: 30px;">
+													<div class="desc"
+														style="background-color: #f4f4f4; padding: 15px; border-radius: 10px;">
+														<h4>
+															<span class="text-left"
+																style="font-color: #a1beb6; font-size: 13px;"> <i
+																class="mdi mdi-subdirectory-arrow-right"></i><b>A.</b>
+																호스트님의 답글
+															</span>
+														</h4>
+														<p style="padding-left: 15px">${ qna.answer}</p>
+														<sec:authorize access="hasRole('HOST')">
+															<sec:authentication property="principal.username"
+																var="loginMember" />
+															<c:if test="${loginMember eq space.memberEmail}">
+																<h4 style="text-align: right;">
+																	<!-- <span style="width: 80px; height: 24.8px; margin: 3px;"> -->
+																	<button type="button"
+																		class="btn btn-secondary answerbtn"
+																		data-toggle="modal" data-target="#answerModal"
+																		data-whatever="@fat"
+																		style="float: right; margin-right: 10px; margin-bottom: 7px; letter-spacing: 1px; color: #a6e4d2; font-weight: bold; font-size: 13px;"
+																		onclick="selectQnaNo('${qna.qnaNo }');"
+																		value="${qna.qnaNo }">답변 수정</button>
+
+																	<!-- </span> -->
+																</h4>
+															</c:if>
+														</sec:authorize>
+													</div>
+												</div>
+
+											</c:if>
+											<!-- 답변내용이 있고 비공개질문글일때 -->
+											<c:if test="${ qna.answer != null && qna.status eq true }">
+												<!-- 관리자이거나 -->
+												<sec:authorize access="hasRole('ADMIN')">
+													<div class="review d-flex"
+														style="padding: 0 10px 20px 10px; margin-left: 30px;">
+														<div class="desc"
+															style="background-color: #f4f4f4; padding: 15px; border-radius: 10px;">
+															<h4>
+																<span class="text-left"
+																	style="color: #a1beb6; font-size: 13px;"> <i
+																	class="mdi mdi-subdirectory-arrow-right"></i><b>A.</b>
+																	호스트님의 답글
+																</span>
+															</h4>
+															<p style="padding-left: 15px">${ qna.answer}</p>
+														</div>
+													</div>
+												</sec:authorize>
+												<!-- 유저인 경우 -->
+												<sec:authorize access="hasRole('USER')">
+													<sec:authentication property="principal.username"
+														var="loginMember" />
+													<!-- 로그인사용자가 글작성자일때 -->
+													<c:if
+														test="${loginMember != null && loginMember eq qna.email }">
+														<div class="review d-flex"
+															style="padding: 0 10px 20px 10px; margin-left: 30px;">
+															<div class="desc"
+																style="background-color: #f4f4f4; padding: 15px; border-radius: 10px;">
+																<h4>
+																	<span class="text-left"
+																		style="color: #a1beb6; font-size: 13px;"> <i
+																		class="mdi mdi-subdirectory-arrow-right"></i><b>A.</b>
+																		호스트님의 답글
+																	</span>
+																</h4>
+																<p style="padding-left: 15px">${ qna.answer}</p>
+															</div>
+														</div>
+													</c:if>
+												</sec:authorize>
+												<sec:authorize access="hasRole('HOST')">
+													<!-- 호스트일 때 -->
+													<sec:authentication property="principal.username"
+														var="loginMember" />
+
+													<c:if
+														test="${loginMember != null && loginMember eq space.memberEmail }">
+														<div class="review d-flex"
+															style="padding: 0 10px 20px 10px; margin-left: 30px;">
+															<div class="desc"
+																style="background-color: #f4f4f4; padding: 15px; border-radius: 10px;">
+																<h4>
+																	<span class="text-left"
+																		style="color: #a1beb6; font-size: 13px;"> <i
+																		class="mdi mdi-subdirectory-arrow-right"></i><b>A.</b>
+																		호스트님의 답글
+																	</span>
+
+																</h4>
+																<p style="padding-left: 15px">${ qna.answer}</p>
+																<h4 style="text-align: right;">
+																	<button type="button"
+																		class="btn btn-secondary answerbtn"
+																		data-toggle="modal" data-target="#answerModal"
+																		data-whatever="@fat"
+																		style="float: right; margin-right: 10px; margin-bottom: 7px; letter-spacing: 1px; color: #a6e4d2; font-weight: bold; font-size: 13px;"
+																		onclick="selectQnaNo('${qna.qnaNo }');"
+																		value="${qna.qnaNo }">답변 수정</button>
+
+																</h4>
+															</div>
+														</div>
+													</c:if>
+													<!-- 다른 공간의 호스트인데 비공개 글 작성자인경우 -->
+													<c:if
+														test="${loginMember != null && loginMember eq qna.email && loginMember ne space.memberEmail }">
+														<div class="review d-flex"
+															style="padding: 0 10px 20px 10px; margin-left: 30px;">
+															<div class="desc"
+																style="background-color: #dfe8e6; padding: 15px; border-radius: 10px;">
+																<h4>
+																	<span class="text-left"
+																		style="color: #a1beb6; font-size: 13px;"> <i
+																		class="mdi mdi-subdirectory-arrow-right"></i><b>A.</b>
+																		호스트님의 답글
+																	</span>
+																</h4>
+																<p style="padding-left: 15px">${ qna.answer}</p>
+															</div>
+														</div>
+													</c:if>
+
+												</sec:authorize>
+											</c:if>
+
+										</c:forEach>
+									</c:if>
+									<c:if test="${qnaTotal > qnaPaging+5 }">
+										<button type="button" class="btn btn-primary col-3 font-bold"
+											style="margin-left: 33%;" name="qnaPaging"
+											value="${ qnaPaging+5 }">더보기</button>
+									</c:if>
+								</div>
+
+							</div>
+						</div>
+						<!-- qna끝 -->
 
 						<!-- 리뷰 시작-->
 						<div class="tab-pane fade" id="detail-review" role="tabpanel"
@@ -783,15 +956,19 @@ function naverShare() {
 																style="cursor: pointer; display: none; height: 100%">
 																<p>${ review.content }</p>
 																<p style="font-weight: 600;" class="simpleBtn">접기</p>
-																<div style="background-image: url(${pageContext.request.contextPath}/resources/upload/review/${review.image});  width: 500px;height: 350px;background-size: cover;"></div>
-										                         <c:if test="${ not empty review.reviewComment }">
-										                         	<div class="mt-4" style="background-color: #fafafa; width: 500px; cursor:default; border: 1px solid #edeceb; padding-bottom: 30px; ">
-											                         <div class="pl-5 pr-5 pt-4 ">
-											                         	<p><i class="fa fa-comment mr-1"></i>호스트 답글</p>
-											                         	<p>${ review.reviewComment }</p>
-											                         </div>
-										                         	</div>
-										                         </c:if>
+																<div
+																	style="background-image: url(${pageContext.request.contextPath}/resources/upload/review/${review.image});  width: 500px;height: 350px;background-size: cover;"></div>
+																<c:if test="${ not empty review.reviewComment }">
+																	<div class="mt-4"
+																		style="background-color: #fafafa; width: 500px; cursor: default; border: 1px solid #edeceb; padding-bottom: 30px;">
+																		<div class="pl-5 pr-5 pt-4 ">
+																			<p>
+																				<i class="fa fa-comment mr-1"></i>호스트 답글
+																			</p>
+																			<p>${ review.reviewComment }</p>
+																		</div>
+																	</div>
+																</c:if>
 															</div>
 														</div>
 													</div>
@@ -834,13 +1011,16 @@ function naverShare() {
 																<p>${ review.content }</p>
 																<p style="font-weight: 600;" class="simpleBtn">접기</p>
 																<c:if test="${ not empty review.reviewComment }">
-										                         	<div class="mt-4" style="background-color: #fafafa; width: 500px; cursor:default; border: 1px solid #edeceb; padding-bottom: 30px; ">
-											                         <div class="pl-5 pr-5 pt-4 ">
-											                         	<p><i class="fa fa-comment mr-1"></i>댓글</p>
-											                         	<p>${ review.reviewComment }</p>
-											                         </div>
-										                         	</div>
-										                         </c:if>
+																	<div class="mt-4"
+																		style="background-color: #fafafa; width: 500px; cursor: default; border: 1px solid #edeceb; padding-bottom: 30px;">
+																		<div class="pl-5 pr-5 pt-4 ">
+																			<p>
+																				<i class="fa fa-comment mr-1"></i>댓글
+																			</p>
+																			<p>${ review.reviewComment }</p>
+																		</div>
+																	</div>
+																</c:if>
 															</div>
 														</div>
 													</div>
@@ -851,9 +1031,12 @@ function naverShare() {
 									<nav aria-label="Page navigation"
 										style="display: inline text-align: center; margin-left: 45%; margin-top: 50px;">
 										<ul class="pagination" style="border: 0; margin-right: 10px;">
-										<c:if test="${reviewTotal > reviewPaging+5 }">
-											<button type="button" class="btn btn-primary col-3 font-bold" style="left: -35px;" name="reviewPaging" value="${ reviewPaging+5 }" >더보기</button>
-										</c:if>
+											<c:if test="${reviewTotal > reviewPaging+5 }">
+												<button type="button"
+													class="btn btn-primary col-3 font-bold"
+													style="left: -35px;" name="reviewPaging"
+													value="${ reviewPaging+5 }">더보기</button>
+											</c:if>
 										</ul>
 									</nav>
 								</div>
@@ -864,15 +1047,20 @@ function naverShare() {
 										<div class="wrap">
 											<p class="star">
 												<fmt:parseNumber var="star5"
-													value="${  star.sumStar == 0? 0 :star.star5/star.sumStar*100 }" integerOnly="true" />
+													value="${  star.sumStar == 0? 0 :star.star5/star.sumStar*100 }"
+													integerOnly="true" />
 												<fmt:parseNumber var="star4"
-													value="${ star.sumStar == 0? 0 :star.star4/star.sumStar*100 }" integerOnly="true" />
+													value="${ star.sumStar == 0? 0 :star.star4/star.sumStar*100 }"
+													integerOnly="true" />
 												<fmt:parseNumber var="star3"
-													value="${ star.sumStar == 0? 0 :star.star3/star.sumStar*100 }" integerOnly="true" />
+													value="${ star.sumStar == 0? 0 :star.star3/star.sumStar*100 }"
+													integerOnly="true" />
 												<fmt:parseNumber var="star2"
-													value="${ star.sumStar == 0? 0 :star.star2/star.sumStar*100 }" integerOnly="true" />
+													value="${ star.sumStar == 0? 0 :star.star2/star.sumStar*100 }"
+													integerOnly="true" />
 												<fmt:parseNumber var="star1"
-													value="${ star.sumStar == 0? 0 :star.star1/star.sumStar*100 }" integerOnly="true" />
+													value="${ star.sumStar == 0? 0 :star.star1/star.sumStar*100 }"
+													integerOnly="true" />
 												<span> <i class="ion-ios-star"></i> <i
 													class="ion-ios-star"></i> <i class="ion-ios-star"></i> <i
 													class="ion-ios-star"></i> <i class="ion-ios-star"></i> (${ star.sumStar == 0? 0 :star5 }%)
@@ -896,7 +1084,7 @@ function naverShare() {
 											</p>
 											<p class="star">
 												<span> <i class="ion-ios-star"></i> (${ star.sumStar == 0? 0 :star1 }%)
-												</span> <span>${ star.sumStar == 0? 0 :star.star1 } Reviews</span> 
+												</span> <span>${ star.sumStar == 0? 0 :star.star1 } Reviews</span>
 											</p>
 										</div>
 									</div>
@@ -914,51 +1102,63 @@ function naverShare() {
 <!-- 추천시스템 시작 -->
 <div class="container" style="border-top: 1px solid rgba(0, 0, 0, 0.1)">
 	<div class="row justify-content-center">
-		<div class="col-md-12 mt-5 heading-section text-center ftco-animate mb-5">
+		<div
+			class="col-md-12 mt-5 heading-section text-center ftco-animate mb-5">
 			<span class="subheading">카테고리 추천</span>
 			<h2 class="mb-2">다른 ${ cateName }(은/는) 어떠신가요?</h2>
 		</div>
 	</div>
-	
+
 	<div class="row">
-	<c:if test="${ not empty spcList }">
-	<c:forEach items="${ spcList }" var="space" varStatus="vs">
-    	  <div class="col-md-4">
-    		<div class="property-wrap ftco-animate">
-    			<c:choose>
-					<c:when test="${ space.renamedFilename !=null }">
-					<!-- 이미지파일이 있을때 -->
-				   		<a href="${pageContext.request.contextPath }/space/spaceDetail.do?spaceNo=${space.spaceNo}" class="img" style="background-image: url(${pageContext.request.contextPath }/resources/upload/space/${space.renamedFilename});"></a> 
-					</c:when>
-					<c:otherwise>
-						<a href="${pageContext.request.contextPath }/space/spaceDetail.do?spaceNo=${space.spaceNo}" class="img" style="background-image: url(${pageContext.request.contextPath }/resources/upload/space/spcuslogo.png);"></a>
-					</c:otherwise>
-				</c:choose>
-    			<div class="text">
-    				<p class="price"><span class="space-price" style="color: #007bff;">
-    				<fmt:formatNumber value="${space.hourlyPrice }" type="number"/><small>원/시간</small></span></p>
-    				<ul class="property_list">
-    					<li><i class="icon-star"></i>
-    						<c:if test="${space.starAvg != 0 }">
-		    					<fmt:formatNumber value="${space.starAvg}" pattern="0.0" type="number"/>
-	    					</c:if>
-	    					<c:if test="${space.starAvg == 0 }">0</c:if></li>
-    					<li><span class="icon-heart"></span>${space.likeCnt }</li>
-    					<li><span class="icon-comments"></span>${space.reviewCnt }</li>
-    				</ul>
-    				<h3><a href="${pageContext.request.contextPath }/space/spaceDetail.do?spaceNo=${space.spaceNo}">${space.spaceName }</a></h3>
-    				<small><span class="icon-my_location">${space.address }</span></small>
-    			</div>
-    		</div>
-    	</div>
-	</c:forEach>
-	</c:if>
+		<c:if test="${ not empty spcList }">
+			<c:forEach items="${ spcList }" var="space" varStatus="vs">
+				<div class="col-md-4">
+					<div class="property-wrap ftco-animate">
+						<c:choose>
+							<c:when test="${ space.renamedFilename !=null }">
+								<!-- 이미지파일이 있을때 -->
+								<a
+									href="${pageContext.request.contextPath }/space/spaceDetail.do?spaceNo=${space.spaceNo}"
+									class="img"
+									style="background-image: url(${pageContext.request.contextPath }/resources/upload/space/${space.renamedFilename});"></a>
+							</c:when>
+							<c:otherwise>
+								<a
+									href="${pageContext.request.contextPath }/space/spaceDetail.do?spaceNo=${space.spaceNo}"
+									class="img"
+									style="background-image: url(${pageContext.request.contextPath }/resources/upload/space/spcuslogo.png);"></a>
+							</c:otherwise>
+						</c:choose>
+						<div class="text">
+							<p class="price">
+								<span class="space-price" style="color: #007bff;"> <fmt:formatNumber
+										value="${space.hourlyPrice }" type="number" /><small>원/시간</small></span>
+							</p>
+							<ul class="property_list">
+								<li><i class="icon-star"></i> <c:if
+										test="${space.starAvg != 0 }">
+										<fmt:formatNumber value="${space.starAvg}" pattern="0.0"
+											type="number" />
+									</c:if> <c:if test="${space.starAvg == 0 }">0</c:if></li>
+								<li><span class="icon-heart"></span>${space.likeCnt }</li>
+								<li><span class="icon-comments"></span>${space.reviewCnt }</li>
+							</ul>
+							<h3>
+								<a
+									href="${pageContext.request.contextPath }/space/spaceDetail.do?spaceNo=${space.spaceNo}">${space.spaceName }</a>
+							</h3>
+							<small><span class="icon-my_location">${space.address }</span></small>
+						</div>
+					</div>
+				</div>
+			</c:forEach>
+		</c:if>
 	</div>
 </div>
 <input type="hidden" id="bool" value="${ bool }" />
 
 <!-- 추천시스템 끝 -->
-      
+
 <script>
 <!-- 지도 -->
 var mapContainer = document.getElementById('kakaomap'), // 지도를 표시할 div 
