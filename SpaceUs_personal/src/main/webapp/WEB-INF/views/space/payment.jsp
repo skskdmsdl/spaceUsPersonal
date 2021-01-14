@@ -1,38 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!-- 한글 인코딩처리 -->
-<fmt:requestEncoding value="utf-8"/>
+<fmt:requestEncoding value="utf-8" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
-<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
 
 	<form:form name="payment" id="payment"
-	           action="${pageContext.request.contextPath}/reservation/payment.do"
-			   method="POST"
-			   class="calculator-form">
+		action="${pageContext.request.contextPath}/reservation/payment.do"
+		method="POST" class="calculator-form">
 
-		 <input type="hidden" name="revNo" value="">
-		 <input type="hidden" name="memberEmail" value="${ member.memberEmail }">
-		 <input type="hidden" name="spaceNo" value="${ space.spaceNo }">
-		 <input type="hidden" name="day" value="${ reservation.day }">
-		 <input type="hidden" name="startHour" value="${ reservation.startHour }">
-		 <input type="hidden" name="endHour" value="${ reservation.endHour }">
-		 <input type="hidden" name="pay" value="${ reservation.pay }">
-		 <input type="hidden" name="totalPrice" value="${ reservation.totalPrice }">
-		 <input type="hidden" name="flag" value="">
-		 
-		 <input type="hidden" name="couponNo" value="${ couponNo }">
-	
+		<input type="hidden" name="revNo" value="">
+		<input type="hidden" name="memberEmail"
+			value="${ member.memberEmail }">
+		<input type="hidden" name="spaceNo" value="${ space.spaceNo }">
+		<input type="hidden" name="day" value="${ reservation.day }">
+		<input type="hidden" name="startHour"
+			value="${ reservation.startHour }">
+		<input type="hidden" name="endHour" value="${ reservation.endHour }">
+		<input type="hidden" name="pay" value="${ reservation.pay }">
+		<input type="hidden" name="totalPrice"
+			value="${ reservation.totalPrice }">
+		<input type="hidden" name="flag" value="">
+
+		<input type="hidden" name="couponNo" value="${ couponNo }">
+
 	</form:form>
 
 	<script>
