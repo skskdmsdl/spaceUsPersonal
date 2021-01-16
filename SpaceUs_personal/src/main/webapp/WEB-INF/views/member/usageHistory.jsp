@@ -27,9 +27,6 @@
 
 <div class="page-wrapper">
 	<div class="container-fluid">
-		<!-- ============================================================== -->
-		<!-- Bread crumb and right sidebar toggle -->
-		<!-- ============================================================== -->
 		<div class="row page-titles">
 			<div class="col-md-5 align-self-center">
 				<h4 class="text-themecolor ml-5">마이페이지</h4>
@@ -320,21 +317,26 @@
 </div>
 
 <script>
+	//사용내역 모아보기
+	$("#selectId")
+			.change(
+					function() {
+						let option = $("#selectId").val();
+						if (option == 1)
+							location.href = "${pageContext.request.contextPath}/member/usageHistory.do";
+						else if (option == 2)
+							location.href = "${pageContext.request.contextPath }/member/usageIng.do";
+						else
+							location.href = "${pageContext.request.contextPath }/member/usageFinish.do";
+					});
 
-//사용내역 모아보기
-$("#selectId").change(function(){
-	let option = $("#selectId").val();
-	if(option == 1) location.href="${pageContext.request.contextPath}/member/usageHistory.do";
-	else if(option == 2) location.href="${pageContext.request.contextPath }/member/usageIng.do";
-	else location.href="${pageContext.request.contextPath }/member/usageFinish.do";
-});
+	//예약취소
+	function refund(revNo) {
 
-//예약취소
-function refund(revNo){
-	
-	window.location.href="${pageContext.request.contextPath}/reservation/cancelReservation.do?revNo="+revNo;
-	
-}
+		window.location.href = "${pageContext.request.contextPath}/reservation/cancelReservation.do?revNo="
+				+ revNo;
+
+	}
 </script>
 
 <script

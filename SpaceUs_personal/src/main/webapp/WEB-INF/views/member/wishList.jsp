@@ -159,7 +159,6 @@ span>a:hover {
 				</div>
 			</div>
 		</div>
-
 	</div>
 	<!-- 위시리스트 끝 -->
 </div>
