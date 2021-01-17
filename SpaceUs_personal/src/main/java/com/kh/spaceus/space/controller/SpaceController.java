@@ -536,7 +536,6 @@ public class SpaceController {
 		mav.addObject("availList",availList);
 		mav.addObject("unselectableList",unselectableList);
 		mav.addObject("couponList",couponList);
-		
 		mav.setViewName("space/reserveSpace");
 		return mav;
 
@@ -637,7 +636,6 @@ public class SpaceController {
 								Principal principal,
 								RedirectAttributes redirectAttr) {
 		//완료되지 않은 예약이 있으면 삭제못하게 막기
-		//System.out.println(spaceNo+ " : " + principal.getName());
 		int remainder = reservationService.confirmReservation(spaceNo);
 		if(remainder != 0) {
 			redirectAttr.addFlashAttribute("msg", "아직 예약이 있어 공간삭제가 불가능합니다.");
@@ -652,7 +650,6 @@ public class SpaceController {
 			//권한변경
 			int authResult = memberService.updateUser(principal.getName());
 			redirectAttr.addFlashAttribute("msg", "성공적으로 공간을 삭제했습니다.");
-			//SecurityContextHolder.clearContext();
 		 } else
 			 redirectAttr.addFlashAttribute("msg", "공간 삭제에 실패했습니다.");
 		
@@ -663,7 +660,6 @@ public class SpaceController {
 		SecurityContextHolder.getContext().setAuthentication(newAuth);
 		
 		return "redirect:/member/memberProfile.do";
-
 	}
 	
 }

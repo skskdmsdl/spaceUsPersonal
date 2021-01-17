@@ -23,7 +23,6 @@ public class SpaceListController {
 	@RequestMapping(value = "/autocomplete.do", method = RequestMethod.GET, produces="text/plain;charset=UTF-8")
 	@ResponseBody
 	public String autocomplete(@RequestParam String value) {
-		System.out.println(value);
 		
 		List<Object> array = spaceSerivce.selectAutoList(value);
 	    	    	    
