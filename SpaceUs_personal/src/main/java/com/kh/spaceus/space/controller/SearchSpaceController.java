@@ -30,10 +30,8 @@ public class SearchSpaceController {
 
 	@RequestMapping(value = "/searchSpace.do", method = RequestMethod.GET)
 	public ModelAndView searchSpace(ModelAndView mav, @RequestParam("keyword") String keyword, @RequestParam String sort) {
-		//log.info("sort={}",sort);
 		// 입력값을 통해 spaceNo가져오기
 		List<String> spaceNoList = spaceSerive.selectSpaceNoList(keyword,sort);
-		
 		List<SpaceList> space = null;
 		List<SpaceList> spaceList = new ArrayList<>();
 		
@@ -46,7 +44,6 @@ public class SearchSpaceController {
 			 String searchSpace = spaceNo.toString();
 			 searchSpace = searchSpace.replace("[", "");
 			 searchSpace = searchSpace.replace("]", "");
-			 
 			 
 			 // 가져온 spaceNo로 space테이블 데이터 가져오기
 			 space = spaceSerive.selectSearchSpaceList(searchSpace);
@@ -63,8 +60,6 @@ public class SearchSpaceController {
 	
 	@GetMapping("/searchDetailSpace.do")
 	public ModelAndView searchDetailSpace(ModelAndView mav, @RequestParam String category, @RequestParam String location, @RequestParam String option, @RequestParam String sort) {
-		log.info("sort={}",sort);
-		
 		String keyword = location+" "+category+" "+option;
 		
 		Map<String,String> map = new HashMap<>();
@@ -89,7 +84,6 @@ public class SearchSpaceController {
 			
 			space = spaceSerive.selectSearchSpaceList(spaceNo2);
 			spaceList.addAll(space);
-			System.out.println(spaceList);
 			
 		}
 		mav.setViewName("space/searchSpace");

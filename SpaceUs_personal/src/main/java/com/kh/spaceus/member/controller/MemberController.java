@@ -235,12 +235,6 @@ public class MemberController {
 		//예약테이블 조회 -> 해당 아이디의 모든 예약번호 조회 + 공간정보 가져오기
 		List<Space> spaceList = spaceService.selectReviewList(principal.getName());
 		
-		for(Space s : spaceList) {
-			System.out.println(s.getReviewComment());
-			System.out.println(s.getSpaceNo());
-			System.out.println(s.getRevNo());
-		}
-		
 		model.addAttribute("spaceList", spaceList);
 		model.addAttribute("member", member);
 		model.addAttribute("status", "all");
@@ -252,8 +246,6 @@ public class MemberController {
 		Member member = memberService.selectOneMember(principal.getName());
 		List<Space> spaceList = spaceService.selectReviewPossible(principal.getName());
 		
-		System.out.println("@2"+spaceList); 
-		
 		model.addAttribute("spaceList", spaceList);
 		model.addAttribute("member", member);
 		model.addAttribute("status", "possible");
@@ -264,8 +256,6 @@ public class MemberController {
 	public String reviewComplete (Model model, Principal principal) {
 		Member member = memberService.selectOneMember(principal.getName());
 		List<Space> spaceList = spaceService.selectReviewComplete(principal.getName());
-		
-		System.out.println("@2"+spaceList); 
 		
 		model.addAttribute("spaceList", spaceList);
 		model.addAttribute("member", member);
@@ -411,14 +401,12 @@ public class MemberController {
 	// 로그아웃
 	@RequestMapping("/memberLogout.do")
 	public String memberLogout() {
-		
 		return "redirect:/";
 	}
 
 	// 회원가입
 	@RequestMapping("/memberEnrollForm.do")
 	public String memberEnroll() {
-
 		return "member/memberEnrollForm";
 	}
 
@@ -442,7 +430,6 @@ public class MemberController {
 	@GetMapping("/checkNickNameDuplicate.do")
 	@ResponseBody
 	public Map<String, Object> checkNickNameDuplicate(@RequestParam("nickName") String nickName) {
-		System.out.println(nickName);
 		Member member = memberService.selectOneNickName(nickName);
 		boolean isUsable = member == null;
 
@@ -544,7 +531,6 @@ public class MemberController {
 		
 		review.setReviewAtt(attachList);
 		log.debug("reveiw = {}", review);
-		System.out.println(review);
 		
 		//2. 게시글, 첨부파일정보를 DB에 저장
 		try {
@@ -596,13 +582,11 @@ public class MemberController {
 			
 			//별점 평균 업데이트
 			List<Review> reviewList = spaceService.selectStarAvg(spaceNo);
-			/* Review r = new Review(); */
 			float starAvg = 0;
 			for(Review r  : reviewList) {
 				starAvg += r.getStarRating();
 			}
 			starAvg = starAvg/reviewList.size();
-			System.out.println("@@3"+starAvg);
 			
 			Space space = new Space();
 			space.setStarAvg(starAvg);
