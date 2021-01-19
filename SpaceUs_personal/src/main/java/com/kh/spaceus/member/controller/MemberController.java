@@ -127,10 +127,8 @@ public class MemberController {
 		model.addAttribute("status", "all");
 		mav.addObject("revList",revList);
 		mav.addObject("spaceList",spaceList);
-		
 		mav.addObject("totalCnt", totalCnt);	
 		mav.addObject("pageBar", pageBar);
-		
 		mav.setViewName("member/usageHistory");
 		return mav;
 	}
@@ -158,10 +156,8 @@ public class MemberController {
 		model.addAttribute("status", "ing");
 		mav.addObject("revList",revList);
 		mav.addObject("spaceList",spaceList);
-		
 		mav.addObject("totalCnt", totalCnt);	
 		mav.addObject("pageBar", pageBar);
-		
 		mav.setViewName("member/usageHistory");
 		return mav;
 
@@ -383,7 +379,6 @@ public class MemberController {
 				messageHelper.setFrom(setfrom);
 				messageHelper.setTo(tomail);
 				messageHelper.setSubject(title);
-			
 
 				mailSender.send(message);
 				redirectAttr.addFlashAttribute("msg", "이메일이 전송되었습니다.");
@@ -538,13 +533,11 @@ public class MemberController {
 			
 			//별점 평균 업데이트
 			List<Review> reviewList = spaceService.selectStarAvg(spaceNo);
-			/* Review r = new Review(); */
 			float starAvg = 0;
 			for(Review r  : reviewList) {
 				starAvg += r.getStarRating();
 			}
 			starAvg = starAvg/reviewList.size();
-			System.out.println("@@3"+starAvg);
 			
 			Space space = new Space();
 			space.setStarAvg(starAvg);
