@@ -163,7 +163,6 @@ public class MemberController {
 
 	}
 
-
 	@RequestMapping("/usageFinish.do")
 	public ModelAndView usageFinish(Principal principal, ModelAndView mav, Model model) {
 
@@ -180,7 +179,6 @@ public class MemberController {
 		mav.addObject("spaceList",spaceList);
 		mav.setViewName("member/usageHistory");
 		return mav;
-
 	}
 
 	// 위시리스트
@@ -192,7 +190,6 @@ public class MemberController {
 		int offset = (cPage - 1) * limit;
 		
 		List<Wish> list = memberService.selectWishList(principal.getName());
-		
 		int totalContents = memberService.selectWishTotal(principal.getName()); 
 		String url = request.getRequestURI() + "?";
 		String pageBar = Utils.getPageBarHtml(cPage, limit, totalContents, url);
@@ -636,5 +633,4 @@ public class MemberController {
 		
 		return mav;
 	}
-
 }

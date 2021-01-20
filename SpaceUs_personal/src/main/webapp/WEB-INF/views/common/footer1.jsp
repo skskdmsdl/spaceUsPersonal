@@ -4,8 +4,6 @@
     
     
  <!-- footer1.jsp는 searchSpace.jsp용의 footer 입니다 -->
- 
- 
 <footer class="ftco-footer ftco-section" style="background-color: #f7f7f7; padding: 4em 0;;">
       <div class="container">
         <div class="row mb-5">
@@ -68,24 +66,20 @@
 <script src="${ pageContext.request.contextPath }/resources/assets/node_modules/d3/d3.min.js"></script>
 <script src="${ pageContext.request.contextPath }/resources/assets/node_modules/c3-master/c3.min.js"></script>
 <!-- Chart JS -->
-  <%-- <script src="${ pageContext.request.contextPath }/resources/js/dashboard1.js"></script>
-  <script src="${pageContext.request.contextPath }/resources/js/jquery.min.js"></script>
-  <script src="${pageContext.request.contextPath }/resources/js/jquery-migrate-3.0.1.min.js"></script> --%>  
-  <script src="${pageContext.request.contextPath }/resources/js/popper.min.js"></script>
-  <script src="${pageContext.request.contextPath }/resources/js/bootstrap.min.js"></script>
-  <script src="${pageContext.request.contextPath }/resources/js/jquery.easing.1.3.js"></script>
-  <script src="${pageContext.request.contextPath }/resources/js/jquery.waypoints.min.js"></script>
-  <script src="${pageContext.request.contextPath }/resources/js/jquery.stellar.min.js"></script>
-  <script src="${pageContext.request.contextPath }/resources/js/owl.carousel.min.js"></script>
-  <script src="${pageContext.request.contextPath }/resources/js/jquery.magnific-popup.min.js"></script>
-  <script src="${pageContext.request.contextPath }/resources/js/jquery.animateNumber.min.js"></script>
-  <script src="${pageContext.request.contextPath }/resources/js/bootstrap-datepicker.js"></script>
-  <script src="${pageContext.request.contextPath }/resources/js/jquery.timepicker.min.js"></script>
-  <script src="${pageContext.request.contextPath }/resources/js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="${pageContext.request.contextPath }/resources/js/google-map.js"></script>
-  <script src="${pageContext.request.contextPath }/resources/js/main.js"></script> 
-  
-  </body>
+<script src="${pageContext.request.contextPath }/resources/js/popper.min.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/jquery.easing.1.3.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/jquery.waypoints.min.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/jquery.stellar.min.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/owl.carousel.min.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/jquery.magnific-popup.min.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/jquery.animateNumber.min.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/bootstrap-datepicker.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/jquery.timepicker.min.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="${pageContext.request.contextPath }/resources/js/google-map.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/main.js"></script> 
+</body>
 
 </html>
