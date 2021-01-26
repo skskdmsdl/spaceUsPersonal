@@ -386,23 +386,6 @@ $("#memberEnrollFrm").submit(function(){
 
 	var $alertDivP = $(".alert-div p");
 	var $alertDiv = $(".alert-div");
-
-	/* //이메일 중복검사여부
-	var $emailValid = $("#emailValid");
-	if($emailValid.val() == 0){
-		$alertDiv.show();
-		$alertDivP.text("이메일을 확인해주세요.")
-		return false;
-	}
-	
-	//닉네임 중복검사여부
-	var $nickNameValid = $("#nickNameValid");
-	if($nickNameValid.val() == 0){
-		$alertDiv.show();
-		$alertDivP.text("닉네임을 확인해주세요.")
-		return false;
-	}
-	 */
 	 
 	//휴대폰인증검사여부
 	var $phoneValid = $("#phoneValid");
