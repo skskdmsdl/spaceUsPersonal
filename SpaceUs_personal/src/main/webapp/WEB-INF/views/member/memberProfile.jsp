@@ -14,9 +14,6 @@
 
         <div class="page-wrapper">
             <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
                         <h4 class="text-themecolor ml-5">마이페이지</h4>
@@ -363,7 +360,6 @@ $(function(){
 			dataType : "json",
 			success : function(data){
 				text = data.text;
-				//console.log(text);
 				
 				if(data.text != undefined) {
 		

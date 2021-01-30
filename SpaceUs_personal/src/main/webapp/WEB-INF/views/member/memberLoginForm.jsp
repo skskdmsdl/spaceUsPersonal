@@ -165,7 +165,6 @@
                          });
                        }
                      </script>
-						<!--/c:if-->
 					</div>
 					<div class="text-center p-t-46 p-b-20">
 						<p class="txt1">또는</p>
