@@ -615,16 +615,16 @@ public class SpaceController {
 	@GetMapping("/selectPopularSpaces.do")
 	public ModelAndView selectPopularSpaces(ModelAndView mav) {
 
-		List<SpaceList> popularList = spaceService.selectPopularSpaces();
 		List<Attachment> imageList = new ArrayList<>(); 
 		List<SpaceList> list = new ArrayList<>(); 
 		
-		 for(SpaceList s : popularList) { Attachment att =
-		 spaceService.selectPopularImage(s.getSpaceNo());
-		 s.setAddress(s.getAddress());
-		 s.setRenamedFilename(att.getRname()); list.add(s); }
+		List<SpaceList> popularList = spaceService.selectPopularSpaces().stream().forEach(s ->
+				Attachment att = spaceService.selectPopularImage(s.getSpaceNo());
+				s.setAddress(s.getAddress());
+				s.setRenamedFilename(att.getRname());
+				list.add(s); 		   
+			);
 		 
-		
 		mav.addObject("list", popularList);
 		mav.setViewName("jsonView");
 
